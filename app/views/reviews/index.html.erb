@@ -1,0 +1,7 @@
+<!-- ruby for loop. within this area, repeat each @reviews items -->
+<% @reviews.each do |review| %>
+  <div class="review">
+    <!-- grabbing the review title from model, and linking to corresponding reviews -->
+    <%= link_to review.title, review_path(review) %>
+  </div>
+<% end%>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>SuperhiBien - the best restaurants in the world</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <h1>
+          <%= link_to root_path do %>
+            <%= image_tag "bien-logo.svg" %>
+          <% end %>
+        </h1>
+      </nav>
+      <nav>
+        <!-- rails built-in helpers to link within site -->
+        <%= link_to "Add a review", new_review_path %>
+      </nav>
+    </header>
+
+
+    <main>
+      <!-- puts index.html within the body tag -->
+      <%= yield %>
+    </main>
+
+    <footer>
+      Copyright 2018 Bien Riviews
+    </footer>
+  </body>
+</html>

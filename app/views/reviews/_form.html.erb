@@ -1,0 +1,27 @@
+<!-- this is a new form for @review added in controller. The text between the |[name of variable]| characters are the new variable in view folder  -->
+<%= form_for @review do |f| %>
+  <!-- using rails method of validation -->
+  <% if @review.errors.any? %>
+    <% @review.errors.full_messages.each do |message| %>
+      <p>
+        <%= message %>
+      </p>
+    <% end %>
+  <% end %>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+  </p>
+
+  <p>
+    <%= f.label :score %>
+    <%= f.number_field :score %>
+  </p>
+
+  <%= f.submit "save review" %>
+<% end %>

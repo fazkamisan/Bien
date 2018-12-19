@@ -1,0 +1,169 @@
+"@" is ruby variables eg:
+  ```
+    @number = 13
+  ```
+  you can overwrite the first variable by assign a new one
+
+  ```
+    @number = 14
+  ```
+  can also hold string
+
+  ```
+    @username = "Rikloman" + "admin"
+  ```
+
+  variable can also hold 'symbol' which cant be changed
+
+  ```
+  @method = :delete
+  ```
+
+  variable can also hold list
+
+  ```
+    @shopping_list = ["eggs", "bacon", "sausages"]
+  ```
+
+Hash is like a list but slightly different, it describe one thing instead (singular). Think of it like a js object.
+
+  ```
+    @person = { first_name: "Rik", age:33, shopping:["eggs"]}
+  ```
+  ```
+    @link = {method: :delete}
+  ```
+
+--------------------------------------------------------------------------------
+
+Thinking about features as code
+  Reviews
+    - A user can review a restaurant
+    - Anon users can't add a review
+    - Anon users can see reviews
+    - Anon users can't edit reviews
+    - Anon can't delete anything
+    - Any users can search and filter
+    - A user can edit their own review within an hour
+    - A user can't edit other people's reviews
+    - A user can delete their own review
+    - A user can't delete other people's reviews
+
+  What is a review?
+    - Title
+    - Body
+    - Score (number from 0 to 10)
+    - User
+    - Restaurant name & location
+    - Price rating($, $$, $$$, $$$$)
+    - Cuisine
+
+  MVC
+    - Model (database model of Reviews)
+    - View (HTML of content - page)
+    - Controller (URL definition - find the and merge models and views)
+
+  Pages for reviews (rails convention)
+    - list (index)
+    - Individual review page (show)
+    - New review page (new)
+    - Edit review page (edit)
+
+  adding a new Controller
+  ``` rails generate controller [name with plurals e.g reviews]```
+
+--------------------------------------------------------------------------------
+
+Setting up our first page
+  - Inside routes.rb, update the following text to as follows
+    ```
+      Rails.application.routes.draw do
+        #resources is a rails convention - generated a controller called reviews
+        resources :reviews
+        #this is where the homepage goes (app/controllers/reviews_controller.rb)
+        root "reviews#index"
+      end
+    ```
+  - Inside 'app/controllers/reviews_controller.rb' update the following
+    ```
+      class ReviewsController < ApplicationController
+
+        # def is function in ruby. Telling that the index page coming from app/views/reviews/index.html.erb
+        def index
+          # this is our list page for our review
+        end
+
+      end
+    ```
+  - inside 'app/views/reviews/index.html.erb' update the following
+    ```
+      <h1>Bien Reviews</h1>
+      <h2>The best reviews in the world</h2>
+
+    ```
+
+Adding variables to views
+  - Inside 'app/controllers/reviews_controller.rb' we can add dynamic content. add it inside 'def index....'
+    ```
+      # def is function in ruby. Telling that the index page coming from app/views/reviews/index.html.erb
+      def index
+        # this is our list page for our review
+        # rand([enter number between 0-100]) is a ruby random number function.
+        @number =  rand(100)
+      end
+    ```
+  - We can then call the variable in the view: 'app/views/reviews/index.html.erb'
+    ```
+      <p> the random number is <%= @number %></p>
+    ```
+
+--------------------------------------------------------------------------------
+
+Models is where we can add validation to rails. https://guides.rubyonrails.org/active_record_validations.html
+
+ - active record validation is where ruby check data.
+ - inside 'app/models/review.rb' you can add the following:
+
+ ```
+   class Review < ApplicationRecord
+     #adding some validations
+     validates :title, presence: true
+     validates :body, length: {minimum: 10}
+     validates :score, numericality: {only_integer: true, greater_than_or_equal_to: 0, less_than_or_equal_to: 10}
+   end
+ ```
+ - 'validates' takes items is the field (as symbol) its validating.
+
+
+--------------------------------------------------------------------------------
+
+Fixing controllers for validations
+ - Once validation is added into model, we now need to create user warning.
+ - inside 'app/controllers/reviews_controller.rb', we need to change our "def create"
+    ```
+      # we can to check if the model can be saved, if it is, we're go to home page again, if it isn't show the form
+      if @review.save
+        redirect_to root_path
+      else
+        # show the view for new.html.erb
+        render "new"
+      end
+    ```
+
+--------------------------------------------------------------------------------
+
+Adding errors to our views
+  - One of the way to show this in inside 'view' folder, in this example 'app/views/reviews/_form.html.erb'
+  - add validation box html like below
+  - using ruby if, it will loop through each validation
+    ```
+    <!-- using rails method of validation -->
+    <% if @review.errors.any? %>
+      <% @review.errors.full_messages.each do |message| %>
+        <p>
+          <%= message %>
+        </p>
+      <% end %>
+    <% end %>
+    ```
+  - the message will display based on the model validate specified in 'app/models/review.rb'

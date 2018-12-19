@@ -1,0 +1,18 @@
+<h1>
+  <%= @review.title %>
+</h1>
+<div class="score">
+  <%= @review.score %> / 10
+</div>
+
+<div class="body">
+  <!-- rails helper formatted version -->
+  <%= simple_format @review.body %>
+</div>
+
+<div class="actions">
+  <!--adding button to edit current review -->
+  <%= link_to "Edit this review", edit_review_path(@review) %>
+  <!-- adding the button that will delete with confirmation  -->
+  <%= link_to "Delete this review", review_path(@review), method: :delete, data: {confirm: "Are you sure?"}  %>
+</div>
