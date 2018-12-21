@@ -2,15 +2,24 @@
 <%= form_for @review do |f| %>
   <!-- using rails method of validation -->
   <% if @review.errors.any? %>
-    <% @review.errors.full_messages.each do |message| %>
-      <p>
-        <%= message %>
-      </p>
-    <% end %>
+    <div class="errors">
+      <% @review.errors.full_messages.each do |message| %>
+        <p>
+          <%= message %>
+        </p>
+      <% end %>
+    </div>
   <% end %>
+  <!-- using rails method of validation -->
+
   <p>
     <%= f.label :title %>
     <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :restaurant %>
+    <%= f.text_field :restaurant %>
   </p>
 
   <p>
@@ -21,6 +30,26 @@
   <p>
     <%= f.label :score %>
     <%= f.number_field :score %>
+  </p>
+
+  <p>
+    <%= f.label :ambiance %>
+    <%= f.text_field :ambiance %>
+  </p>
+
+  <p>
+    <%= f.label :cuisine %>
+    <%= f.text_field :cuisine %>
+  </p>
+
+  <p>
+    <%= f.label :price %>
+    <%= radio_button_tag(:price, 1) %>
+    <%= label_tag(:price, "$") %>
+    <%= radio_button_tag(:price, 2) %>
+    <%= label_tag(:price, "$$") %>
+    <%= radio_button_tag(:price, 3) %>
+    <%= label_tag(:price, "$$$") %>
   </p>
 
   <%= f.submit "save review" %>

@@ -1,6 +1,12 @@
+<!-- Define it here, so this will print out on the application.html.erb -->
+<% content_for :page_title, @review.title %>
 <h1>
   <%= @review.title %>
 </h1>
+
+<h2>
+  <%= @review.restaurant %>
+</h2>
 <div class="score">
   <%= @review.score %> / 10
 </div>
@@ -9,6 +15,26 @@
   <!-- rails helper formatted version -->
   <%= simple_format @review.body %>
 </div>
+
+<!-- if statement validation in ruby -->
+<% if @review.ambiance.present? %>
+  <div class="ambiance">
+    Ambiance: <%= @review.ambiance %>
+  </div>
+<% end %>
+
+<div class="price">
+  Ambiance: <%= @review.price %>
+</div>
+
+<!-- if statement validation in ruby -->
+<% if @review.cuisine.present? %>
+  <div class="cuisine">
+    Cusine: <%= @review.cuisine %>
+  </div>
+<% end %>
+
+
 
 <div class="actions">
   <!--adding button to edit current review -->

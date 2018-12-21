@@ -4,15 +4,27 @@ class ReviewsController < ApplicationController
   def index
     # this is our list page for our review
     # variable is @.
-    # rand([enter number between 0-100]) is a ruby random number function.
-    @number =  rand(100)
+    # creating a filter variable for price
+    @price = params[:price]
+    #creating a filter variable for cuisine
+    @cuisine = params[:cuisine]
 
+    #filtering properly by get all the reviews "Review" model from the database
     #creating new review variable as ruby list[]
     #@reviews = ["The Smile", "Baby Bo's", "Chipotle", "nandos"]
-
-    #calling all Review model from the database
     @reviews = Review.all
 
+    # filtering by price. this will toggle on/off depend when it has filter
+    if @price.present?
+      #take all of the review we have and replace the original review with filtered ones
+      # find the value of the price in db that matches the param above
+      @reviews = @reviews.where(price: @price)
+    end
+
+    #filter by cuisine
+    if @cuisine.present?
+      @reviews = @reviews.where(cuisine: @cuisine)
+    end
   end
   #adding new function to define new review page
   def new
@@ -76,7 +88,7 @@ class ReviewsController < ApplicationController
 
   # creating a new function that will hold templated function
   def form_params
-    params.require(:review).permit(:title, :body, :score)
+    params.require(:review).permit(:title, :restaurant, :body, :score, :ambiance, :cuisine, :price)
   end
 
 end

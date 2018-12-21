@@ -167,3 +167,122 @@ Adding errors to our views
     <% end %>
     ```
   - the message will display based on the model validate specified in 'app/models/review.rb'
+
+--------------------------------------------------------------------------------
+
+Using to_param to make SEO-friendly URLs
+
+ - We can override default urls to be SEO friendly inside app/models/review.rb
+   ```
+      #changing the to_prarams default, take the ID and change it to string (title friendly url)
+      def to_param
+        id.to_s + "-" + title.parameterize
+      end
+   ```
+
+--------------------------------------------------------------------------------
+
+Adding page titles with content_for
+
+  - We can easily make content detail page changes dynamically by doing the following
+  - Using this special ruby tag, we can grab from certain views (show/new.html.erb).
+  - first, we go to 'app/views/layouts/application.html.erb', open '<title>' since this shows everywhere on the site
+    ```
+      <title> <%= content_for :page_title %> - SuperhiBien </title>
+    ```
+  - Now create a 'ruby symbol' inside 'app/views/reviews/show.html.erb' (top of the page)
+    ```
+      <!-- Define it here, so this will print out on the application.html.erb -->
+      <% content_for :page_title, @review.title %>
+    ```
+  - for views that might have a variable to put, we can do the following app/views/reviews/new.html.erb
+    ```
+      <!-- dont print out coz we going to print elsewhere -->
+      <% content_for :page_title, "Add a new review" %>
+    ```
+
+--------------------------------------------------------------------------------
+
+Adding new database fields with migrations
+https://edgeguides.rubyonrails.org/active_record_migrations.html
+
+ - We can find out what's in our database by 'db/schema.rb'
+ - Remember DO NOT EDIT this.
+ - What we should do instead is add a migration, located inside 'db/migrate'
+ - so go to command and run the following
+   ```
+     rails generate migration [name of migration] i.e add_new_info_to_review
+   ```
+ - it will then generate another db file, inside it we add the following code in between 'def change'
+   ```
+    def change
+      add_column :reviews, :phone_number, :string
+      add_column :reviews, :ambiance, :string
+    end
+   ```
+  - So it will like as follow:
+    add_column :[name of table], :[name of field], :[type of field]
+
+  - Remember to always double check and save. Its easier than having to re-do the whole process
+  - Once ok, go back to the terminal and run
+    ```
+      rails db:migrate
+    ```
+  - To double check whether the migration is successful, you can go to 'db/schema.rb', it should just update itself
+
+  - You can now add validation model inside 'review.rb' and view 'app/views/reviews/_form.html.erb'
+
+  - also dont forget to update controller 'app/controllers/reviews_controller.rb'
+    ```
+      # creating a new function that will hold templated function
+      def form_params
+        params.require(:review).permit(:title, :restaurant, :body, :score, :ambiance)
+      end
+    ```
+  - in order to display the new fields in detail view, dont forget to update here too: 'app/views/reviews/show.html.erb'
+
+--------------------------------------------------------------------------------
+
+How to add filter params
+
+  - Inside 'app/controllers/reviews_controller.rb' you can filter by using query parameter in the url
+
+    ```
+      # def is function in ruby. Telling that the index page coming from app/views/reviews/index.html.erb
+      def index
+        # this is our list page for our review
+        # variable is @.
+        # creating a filter variable for price
+        @price = params[:price]
+        #creating a filter variable for cuisine
+        @cuisine = params[:cuisine]
+
+        #filtering properly by get all the reviews "Review" model from the database
+        #creating new review variable as ruby list[]
+        #@reviews = ["The Smile", "Baby Bo's", "Chipotle", "nandos"]
+        @reviews = Review.all
+
+        # filtering by price. this will toggle on/off depend when it has filter
+        if @price.present?
+          #take all of the review we have and replace the original review with filtered ones
+          # find the value of the price in db that matches the param above
+          @reviews = @reviews.where(price: @price)
+        end
+
+        #filter by cuisine
+        if @cuisine.present?
+          @reviews = @reviews.where(cuisine: @cuisine)
+        end
+      end
+
+    ```
+    - we can now set some links in rails that acts as a filter, add it inside 'app/views/reviews/index.html.erb'
+      ```
+        <!-- adding links that matches price based on query params (controller) -->
+        <nav class="filters">
+          <%= link_to "All prices", root_path %>
+          <%= link_to "$", root_path(price: 1) %>
+          <%= link_to "$$", root_path(price: 2) %>
+          <%= link_to "$$$", root_path(price: 3) %>
+        </nav>
+      ```
