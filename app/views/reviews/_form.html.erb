@@ -1,56 +1,15 @@
 <!-- this is a new form for @review added in controller. The text between the |[name of variable]| characters are the new variable in view folder  -->
-<%= form_for @review do |f| %>
-  <!-- using rails method of validation -->
-  <% if @review.errors.any? %>
-    <div class="errors">
-      <% @review.errors.full_messages.each do |message| %>
-        <p>
-          <%= message %>
-        </p>
-      <% end %>
-    </div>
-  <% end %>
-  <!-- using rails method of validation -->
+<%= simple_form_for @review do |f| %>
+  <%= f.input :title %>
+  <%= f.input :restaurant %>
+  <%= f.input :address %>
+  <%= f.input :body %>
+  <%= f.input :cuisine %>
+  <%= f.input :ambiance %>
+  <%= f.input :score %>
+  <%= f.radio_button :price, "Cheap" %> Cheap<br />
+  <%= f.radio_button :price, "Reasonable" %> Reasonable<br />
+  <%= f.radio_button :price, "Pricey" %> Pricey<br />
 
-  <p>
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </p>
-
-  <p>
-    <%= f.label :restaurant %>
-    <%= f.text_field :restaurant %>
-  </p>
-
-  <p>
-    <%= f.label :body %>
-    <%= f.text_area :body %>
-  </p>
-
-  <p>
-    <%= f.label :score %>
-    <%= f.number_field :score %>
-  </p>
-
-  <p>
-    <%= f.label :ambiance %>
-    <%= f.text_field :ambiance %>
-  </p>
-
-  <p>
-    <%= f.label :cuisine %>
-    <%= f.text_field :cuisine %>
-  </p>
-
-  <p>
-    <%= f.label :price %>
-    <%= radio_button_tag(:price, 1) %>
-    <%= label_tag(:price, "$") %>
-    <%= radio_button_tag(:price, 2) %>
-    <%= label_tag(:price, "$$") %>
-    <%= radio_button_tag(:price, 3) %>
-    <%= label_tag(:price, "$$$") %>
-  </p>
-
-  <%= f.submit "save review" %>
+  <%= f.button :submit %>
 <% end %>

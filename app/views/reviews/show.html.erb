@@ -7,6 +7,11 @@
 <h2>
   <%= @review.restaurant %>
 </h2>
+
+<div class="address">
+  <%= @review.address %>
+</div>
+
 <div class="score">
   <%= @review.score %> / 10
 </div>
@@ -24,7 +29,7 @@
 <% end %>
 
 <div class="price">
-  Ambiance: <%= @review.price %>
+  Price: <%= @review.price %>
 </div>
 
 <!-- if statement validation in ruby -->
@@ -42,3 +47,23 @@
   <!-- adding the button that will delete with confirmation  -->
   <%= link_to "Delete this review", review_path(@review), method: :delete, data: {confirm: "Are you sure?"}  %>
 </div>
+
+<h3>Comments</h3>
+<!-- loop through each comments by descending order |[name of action]| -->
+<% @review.comments.order("created_at desc").each do |comment| %>
+  <div class="comment">
+    <!-- simple_format is ruby helper -->
+    <%= simple_format comment.body %>
+    <!-- another ruby helper time_ago_in_words -->
+    <p class="posted"> Posted at <%= time_ago_in_words comment.created_at %> ago</p>
+  </div>
+<% end %>
+
+<h3>Add a comment</h3>
+<!--This is how we tie comments inside review [(take from @variable), (make latest from Model)] -->
+<%= simple_form_for [@review, Comment.new] do |f| %>
+  <!-- This is where the form goes -->
+  <%= f.input :body %>
+  <%= f.button :submit, "Add comment" %>
+
+<% end %>

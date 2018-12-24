@@ -2088,3 +2088,2339 @@ Processing by ReviewsController#index as HTML
 Completed 200 OK in 46ms (Views: 40.7ms | ActiveRecord: 0.3ms)
 
 
+Started GET "/?price=1" for 127.0.0.1 at 2018-12-21 23:21:55 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"price"=>"1"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ?[0m  [["price", 1]]
+  Rendered reviews/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 40ms (Views: 35.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?price=3" for 127.0.0.1 at 2018-12-21 23:22:01 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"price"=>"3"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ?[0m  [["price", 3]]
+  Rendered reviews/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 43ms (Views: 38.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?price=2" for 127.0.0.1 at 2018-12-21 23:22:03 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"price"=>"2"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ?[0m  [["price", 2]]
+  Rendered reviews/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 50ms (Views: 45.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-21 23:22:04 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 46ms (Views: 41.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews/1-test-review-1" for 127.0.0.1 at 2018-12-21 23:26:04 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"1-test-review-1"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 68ms (Views: 62.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reviews/1-test-review-1/edit" for 127.0.0.1 at 2018-12-21 23:26:06 +1100
+Processing by ReviewsController#edit as HTML
+  Parameters: {"id"=>"1-test-review-1"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (6.0ms)
+  Rendered reviews/edit.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 55ms (Views: 49.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reviews/1-test-review-1/edit" for 127.0.0.1 at 2018-12-21 23:40:36 +1100
+Processing by ReviewsController#edit as HTML
+  Parameters: {"id"=>"1-test-review-1"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (82.3ms)
+  Rendered reviews/edit.html.erb within layouts/application (84.6ms)
+Completed 500 Internal Server Error in 94ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `input' for #<ActionView::Helpers::FormBuilder:0x007fc16c5e0af8>):
+    43:   </p>
+    44: 
+    45:   <p>
+    46:     <%= f.input :price, collection: 1..3 %>
+    47:     
+    48:   </p>
+    49: 
+  
+app/views/reviews/_form.html.erb:46:in `block in _app_views_reviews__form_html_erb__1745301158204750602_70234362074820'
+app/views/reviews/_form.html.erb:2:in `_app_views_reviews__form_html_erb__1745301158204750602_70234362074820'
+app/views/reviews/edit.html.erb:3:in `_app_views_reviews_edit_html_erb___653274220975054710_70234362288680'
+Started GET "/reviews/1-test-review-1/edit" for 127.0.0.1 at 2018-12-21 23:42:36 +1100
+Processing by ReviewsController#edit as HTML
+  Parameters: {"id"=>"1-test-review-1"}
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (3.8ms)
+  Rendered reviews/edit.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 34ms (Views: 31.0ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/reviews/1-test-review-1" for 127.0.0.1 at 2018-12-21 23:42:42 +1100
+Processing by ReviewsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Cg2J6rKR0KHtJMFH77N9LuzYEzvrBVvyNOI/TB9kmps3YGa/ZVZHGj6LL4IP/qhFMSLnNpXygDjbpR1aPnBaMw==", "review"=>{"title"=>"Test review 1!!!", "restaurant"=>"Maccas", "body"=>"This place was amazing", "score"=>"8", "ambiance"=>"Family", "cuisine"=>"fast-food", "price"=>"2"}, "commit"=>"save review", "id"=>"1-test-review-1"}
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "reviews" SET "price" = ?, "updated_at" = ? WHERE "reviews"."id" = ?[0m  [["price", 2], ["updated_at", "2018-12-21 12:42:42.625774"], ["id", 1]]
+  [1m[35m (2.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/reviews/1-test-review-1
+Completed 302 Found in 7ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/reviews/1-test-review-1" for 127.0.0.1 at 2018-12-21 23:42:42 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"1-test-review-1"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 27ms (Views: 23.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-21 23:42:45 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 47ms (Views: 41.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/?price=2" for 127.0.0.1 at 2018-12-21 23:42:47 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"price"=>"2"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ?[0m  [["price", 2]]
+  Rendered reviews/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 61ms (Views: 56.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/?price=1" for 127.0.0.1 at 2018-12-21 23:42:49 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"price"=>"1"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ?[0m  [["price", 1]]
+  Rendered reviews/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 43ms (Views: 38.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-21 23:42:50 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 46ms (Views: 41.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews/5-another-good-review" for 127.0.0.1 at 2018-12-21 23:42:58 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"5-another-good-review"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 48ms (Views: 42.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reviews/5-another-good-review/edit" for 127.0.0.1 at 2018-12-21 23:43:00 +1100
+Processing by ReviewsController#edit as HTML
+  Parameters: {"id"=>"5-another-good-review"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (6.8ms)
+  Rendered reviews/edit.html.erb within layouts/application (12.6ms)
+Completed 200 OK in 52ms (Views: 47.2ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/reviews/5-another-good-review" for 127.0.0.1 at 2018-12-21 23:43:03 +1100
+Processing by ReviewsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"U0ljvFTYoiVyzpeCkm239/Eq/l0XFkh4VV7C44FdukOi1Q8VQcyn4c/DDht1AN5S0Cero3J2EbkLWWDYxxhG0A==", "review"=>{"title"=>"Another good review", "restaurant"=>"Baby Bo's", "body"=>"Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.", "score"=>"9", "ambiance"=>"Light", "cuisine"=>"American", "price"=>"3"}, "commit"=>"save review", "id"=>"5-another-good-review"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "reviews" SET "price" = ?, "updated_at" = ? WHERE "reviews"."id" = ?[0m  [["price", 3], ["updated_at", "2018-12-21 12:43:03.940391"], ["id", 5]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/reviews/5-another-good-review
+Completed 302 Found in 6ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/reviews/5-another-good-review" for 127.0.0.1 at 2018-12-21 23:43:03 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"5-another-good-review"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 29ms (Views: 23.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-21 23:43:07 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 47ms (Views: 40.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?price=3" for 127.0.0.1 at 2018-12-21 23:43:09 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"price"=>"3"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ?[0m  [["price", 3]]
+  Rendered reviews/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 46ms (Views: 41.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-21 23:45:11 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 46ms (Views: 41.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews/5-another-good-review" for 127.0.0.1 at 2018-12-21 23:45:43 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"5-another-good-review"}
+  [1m[36mReview Load (1.1ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 47ms (Views: 40.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:13:44 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (2.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (29.2ms)
+Completed 200 OK in 220ms (Views: 193.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/?cuisine=Mexican" for 127.0.0.1 at 2018-12-22 11:13:45 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"Mexican"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."cuisine" = ?[0m  [["cuisine", "Mexican"]]
+  Rendered reviews/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 60ms (Views: 53.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/reviews/4-the-best-restaurant" for 127.0.0.1 at 2018-12-22 11:13:47 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"4-the-best-restaurant"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (15.7ms)
+Completed 200 OK in 65ms (Views: 59.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:13:51 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 57ms (Views: 51.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/reviews/4-the-best-restaurant" for 127.0.0.1 at 2018-12-22 11:13:52 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"4-the-best-restaurant"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 57ms (Views: 50.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:13:55 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 53ms (Views: 48.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reviews/1-test-review-1" for 127.0.0.1 at 2018-12-22 11:13:56 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"1-test-review-1"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 50ms (Views: 43.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:13:59 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 55ms (Views: 51.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews/1-test-review-1" for 127.0.0.1 at 2018-12-22 11:17:30 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"1-test-review-1"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 65ms (Views: 59.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reviews/1-test-review-1/edit" for 127.0.0.1 at 2018-12-22 11:17:31 +1100
+Processing by ReviewsController#edit as HTML
+  Parameters: {"id"=>"1-test-review-1"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (10.9ms)
+  Rendered reviews/edit.html.erb within layouts/application (14.8ms)
+Completed 200 OK in 62ms (Views: 55.7ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/reviews/1-test-review-1" for 127.0.0.1 at 2018-12-22 11:17:36 +1100
+Processing by ReviewsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+ybr9gL73u9vgJ1jo4uhArfKC5g2X44y6PcvjRUKpJ4Ljs68dZH1LiLmadxrtCRpLwZkpSRaPjm0NRCZYlUErA==", "review"=>{"title"=>"Test review 1!!!", "restaurant"=>"Maccas", "body"=>"This place was amazing", "score"=>"8", "ambiance"=>"Family", "cuisine"=>"fast-food", "price"=>"Cheap"}, "commit"=>"save review", "id"=>"1-test-review-1"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "reviews" SET "price" = ?, "updated_at" = ? WHERE "reviews"."id" = ?[0m  [["price", 0], ["updated_at", "2018-12-22 00:17:36.189303"], ["id", 1]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/reviews/1-test-review-1
+Completed 302 Found in 10ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/reviews/1-test-review-1" for 127.0.0.1 at 2018-12-22 11:17:36 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"1-test-review-1"}
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 30ms (Views: 27.4ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:17:53 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 55ms (Views: 50.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?price=1" for 127.0.0.1 at 2018-12-22 11:17:56 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"price"=>"1"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ?[0m  [["price", 1]]
+  Rendered reviews/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 43ms (Views: 38.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:18:15 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 65ms (Views: 61.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews/1-test-review-1" for 127.0.0.1 at 2018-12-22 11:18:17 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"1-test-review-1"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 47ms (Views: 42.3ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/reviews/1-test-review-1" for 127.0.0.1 at 2018-12-22 11:18:22 +1100
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"RcOn/j6RQ5xxsDUqtx/CGdHQfCoWZO52FSBknNSZ5nB4rkir6VbUJ6If2+9XUhdyDCqIJ2iTNbz6Z0aK9Y0m2A==", "id"=>"1-test-review-1"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 1]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:18:22 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 29ms (Views: 25.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reviews/4-the-best-restaurant" for 127.0.0.1 at 2018-12-22 11:18:23 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"4-the-best-restaurant"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 44ms (Views: 39.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/reviews/4-the-best-restaurant" for 127.0.0.1 at 2018-12-22 11:18:26 +1100
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"YhQ22XM7fiSrsz3IiMrNno0y1PrStG3YA1MZn1Vo0clfedmMpPzpn3gc0w1ohxj1UMgg96xDthLsFDuJdHwRYQ==", "id"=>"4-the-best-restaurant"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 4]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:18:26 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 36ms (Views: 31.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reviews/5-another-good-review" for 127.0.0.1 at 2018-12-22 11:18:27 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"5-another-good-review"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 48ms (Views: 42.1ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/reviews/5-another-good-review" for 127.0.0.1 at 2018-12-22 11:18:29 +1100
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"5uTjGXlnkax4e7GSK60DuIjvej49w+6cl/ZmYHFIzKrbiQxMrqAGF6vUX1fL4NbTVRWOM0M0NVZ4sUR2UFwMAg==", "id"=>"5-another-good-review"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 5]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:18:29 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 33ms (Views: 28.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reviews/new" for 127.0.0.1 at 2018-12-22 11:18:32 +1100
+Processing by ReviewsController#new as HTML
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (5.7ms)
+  Rendered reviews/new.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 51ms (Views: 45.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2018-12-22 11:19:23 +1100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"elzX2gyz7rPOdJ2YkYUTev+nBy7upAWpIQrme95Asf9dGBM2B6nNvld5SlsS1lmdIHGLNzNi70lE5qJ7KrUXcg==", "review"=>{"title"=>"Cheap and fast", "restaurant"=>"Macca's", "body"=>"Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.", "score"=>"7", "ambiance"=>"Family", "cuisine"=>"American", "price"=>"Cheap"}, "commit"=>"save review"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "body", "score", "restaurant", "price", "cuisine", "created_at", "updated_at", "ambiance") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Cheap and fast"], ["body", "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."], ["score", 7], ["restaurant", "Macca's"], ["price", 0], ["cuisine", "American"], ["created_at", "2018-12-22 00:19:23.176084"], ["updated_at", "2018-12-22 00:19:23.176084"], ["ambiance", "Family"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:19:23 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 41ms (Views: 37.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reviews/new" for 127.0.0.1 at 2018-12-22 11:19:27 +1100
+Processing by ReviewsController#new as HTML
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (5.9ms)
+  Rendered reviews/new.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 49ms (Views: 44.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2018-12-22 11:20:12 +1100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9357tlZ6XmkmK9z+9ZZwrCm1RwXyex2VB+yQxlUkk6PQOr9aXWB9ZL8mCz12xTpL9mPLHC+993ViANTGodE1Lg==", "review"=>{"title"=>"Yummy in your belly!", "restaurant"=>"Baby Bo's ", "body"=>"Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.", "score"=>"8", "ambiance"=>"Casual", "cuisine"=>"Comfort", "price"=>"Reasonable"}, "commit"=>"save review"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "body", "score", "restaurant", "price", "cuisine", "created_at", "updated_at", "ambiance") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Yummy in your belly!"], ["body", "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat."], ["score", 8], ["restaurant", "Baby Bo's "], ["price", 0], ["cuisine", "Comfort"], ["created_at", "2018-12-22 00:20:12.496823"], ["updated_at", "2018-12-22 00:20:12.496823"], ["ambiance", "Casual"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:20:12 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 30ms (Views: 26.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:20:15 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 42ms (Views: 37.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2018-12-22 11:20:17 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 46ms (Views: 42.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:20:19 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 51ms (Views: 45.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?price=1" for 127.0.0.1 at 2018-12-22 11:20:20 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"price"=>"1"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ?[0m  [["price", 1]]
+  Rendered reviews/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 49ms (Views: 42.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?price=1" for 127.0.0.1 at 2018-12-22 11:21:09 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"price"=>"1"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ?[0m  [["price", 1]]
+  Rendered reviews/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 33ms (Views: 30.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:21:11 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 61ms (Views: 56.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/?price=Cheap" for 127.0.0.1 at 2018-12-22 11:21:12 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"price"=>"Cheap"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ?[0m  [["price", 0]]
+  Rendered reviews/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 49ms (Views: 43.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?price=Reasonable" for 127.0.0.1 at 2018-12-22 11:21:13 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"price"=>"Reasonable"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ?[0m  [["price", 0]]
+  Rendered reviews/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 55ms (Views: 51.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2018-12-22 11:21:15 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 45ms (Views: 40.7ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to ChangePriceType (20181222002356)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "areviews" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "body" text DEFAULT NULL, "score" integer DEFAULT NULL, "restaurant" varchar DEFAULT NULL, "price" integer DEFAULT NULL, "cuisine" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "phone_number" varchar DEFAULT NULL, "ambiance" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "areviews" ("id","title","body","score","restaurant","price","cuisine","created_at","updated_at","phone_number","ambiance")
+                     SELECT "id","title","body","score","restaurant","price","cuisine","created_at","updated_at","phone_number","ambiance" FROM "reviews"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE "reviews"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" integer NOT NULL PRIMARY KEY, "title" varchar DEFAULT NULL, "body" text DEFAULT NULL, "score" integer DEFAULT NULL, "restaurant" varchar DEFAULT NULL, "price" varchar DEFAULT NULL, "cuisine" varchar DEFAULT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "phone_number" varchar DEFAULT NULL, "ambiance" varchar DEFAULT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "reviews" ("id","title","body","score","restaurant","price","cuisine","created_at","updated_at","phone_number","ambiance")
+                     SELECT "id","title","body","score","restaurant","price","cuisine","created_at","updated_at","phone_number","ambiance" FROM "areviews"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "areviews"[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181222002356"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:26:41 +1100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (104.0ms)
+Completed 200 OK in 357ms (Views: 340.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/?price=Cheap" for 127.0.0.1 at 2018-12-22 11:26:43 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"price"=>"Cheap"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ?[0m  [["price", "Cheap"]]
+  Rendered reviews/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 47ms (Views: 41.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:26:45 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 80ms (Views: 75.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2018-12-22 11:26:46 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 54ms (Views: 43.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews/6-cheap-and-fast/edit" for 127.0.0.1 at 2018-12-22 11:26:47 +1100
+Processing by ReviewsController#edit as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (26.1ms)
+  Rendered reviews/edit.html.erb within layouts/application (32.6ms)
+Completed 200 OK in 72ms (Views: 65.6ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2018-12-22 11:26:50 +1100
+Processing by ReviewsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XqEmt7Xn4nZ56J3xlKKP50Fc5TZfQQJpbm0GI/rD6fSIzwMg/hOfIAjxBxivL1yjfdG8l//zGMQmqTW4zUhF2w==", "review"=>{"title"=>"Cheap and fast", "restaurant"=>"Macca's", "body"=>"Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.", "score"=>"7", "ambiance"=>"Family", "cuisine"=>"American", "price"=>"Cheap"}, "commit"=>"save review", "id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "reviews" SET "price" = ?, "updated_at" = ? WHERE "reviews"."id" = ?[0m  [["price", "Cheap"], ["updated_at", "2018-12-22 00:26:50.704935"], ["id", 6]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/reviews/6-cheap-and-fast
+Completed 302 Found in 9ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2018-12-22 11:26:50 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 30ms (Views: 26.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:26:55 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 49ms (Views: 45.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?price=Cheap" for 127.0.0.1 at 2018-12-22 11:26:56 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"price"=>"Cheap"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ?[0m  [["price", "Cheap"]]
+  Rendered reviews/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 48ms (Views: 42.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:26:58 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 51ms (Views: 45.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/reviews/7-yummy-in-your-belly" for 127.0.0.1 at 2018-12-22 11:26:59 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"7-yummy-in-your-belly"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 69ms (Views: 61.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews/7-yummy-in-your-belly/edit" for 127.0.0.1 at 2018-12-22 11:27:00 +1100
+Processing by ReviewsController#edit as HTML
+  Parameters: {"id"=>"7-yummy-in-your-belly"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (7.6ms)
+  Rendered reviews/edit.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 51ms (Views: 46.5ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/reviews/7-yummy-in-your-belly" for 127.0.0.1 at 2018-12-22 11:27:04 +1100
+Processing by ReviewsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YDyq6jfttDevEVyZrLwp2uBX42RmcNpeBKF3xUzWVO7rpznaaIbBzzESIrOBvGQU1CXYgLq/BV1DYHFcqBB20A==", "review"=>{"title"=>"Yummy in your belly!", "restaurant"=>"Baby Bo's ", "body"=>"Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.", "score"=>"8", "ambiance"=>"Casual", "cuisine"=>"Comfort", "price"=>"Reasonable"}, "commit"=>"save review", "id"=>"7-yummy-in-your-belly"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "reviews" SET "price" = ?, "updated_at" = ? WHERE "reviews"."id" = ?[0m  [["price", "Reasonable"], ["updated_at", "2018-12-22 00:27:04.941940"], ["id", 7]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/reviews/7-yummy-in-your-belly
+Completed 302 Found in 6ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/reviews/7-yummy-in-your-belly" for 127.0.0.1 at 2018-12-22 11:27:04 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"7-yummy-in-your-belly"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 48ms (Views: 42.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:27:06 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 41ms (Views: 37.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?price=Reasonable" for 127.0.0.1 at 2018-12-22 11:27:08 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"price"=>"Reasonable"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ?[0m  [["price", "Reasonable"]]
+  Rendered reviews/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 48ms (Views: 43.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/?price=Cheap" for 127.0.0.1 at 2018-12-22 11:27:09 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"price"=>"Cheap"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ?[0m  [["price", "Cheap"]]
+  Rendered reviews/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 53ms (Views: 47.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:27:11 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 64ms (Views: 57.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews/new" for 127.0.0.1 at 2018-12-22 11:27:15 +1100
+Processing by ReviewsController#new as HTML
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (5.5ms)
+  Rendered reviews/new.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 55ms (Views: 50.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2018-12-22 11:36:28 +1100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"jEM6oLwnY9i0DY4drabAtb3iZ3G8911RoZaaKtrR9w6rB/5Mtz1A1S0AWd4u9YpSYjTraGExt7HEet4qLiRRgw==", "review"=>{"title"=>"Yummy street-food styled goodness! ", "restaurant"=>"Mamaks", "body"=>"Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. ", "score"=>"9", "ambiance"=>"Fine dining", "cuisine"=>"Fusion", "price"=>"Pricey"}, "commit"=>"save review"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "body", "score", "restaurant", "price", "cuisine", "created_at", "updated_at", "ambiance") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Yummy street-food styled goodness! "], ["body", "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. "], ["score", 9], ["restaurant", "Mamaks"], ["price", "Pricey"], ["cuisine", "Fusion"], ["created_at", "2018-12-22 00:36:28.726765"], ["updated_at", "2018-12-22 00:36:28.726765"], ["ambiance", "Fine dining"]]
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:36:28 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 29ms (Views: 26.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews/7-yummy-in-your-belly" for 127.0.0.1 at 2018-12-22 11:36:46 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"7-yummy-in-your-belly"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 47ms (Views: 40.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:36:50 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 48ms (Views: 43.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews/8-yummy-street-food-styled-goodness" for 127.0.0.1 at 2018-12-22 11:36:51 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"8-yummy-street-food-styled-goodness"}
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 49ms (Views: 41.7ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:36:57 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 47ms (Views: 42.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2018-12-22 11:36:59 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 45ms (Views: 38.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:37:55 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 47ms (Views: 42.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews/7-yummy-in-your-belly" for 127.0.0.1 at 2018-12-22 11:37:55 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"7-yummy-in-your-belly"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 83ms (Views: 78.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:37:57 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 45ms (Views: 40.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews/8-yummy-street-food-styled-goodness" for 127.0.0.1 at 2018-12-22 11:37:58 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"8-yummy-street-food-styled-goodness"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 45ms (Views: 39.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:38:25 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 47ms (Views: 42.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?cuisine=American" for 127.0.0.1 at 2018-12-22 11:38:27 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"American"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."cuisine" = ?[0m  [["cuisine", "American"]]
+  Rendered reviews/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 46ms (Views: 41.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?cuisine=Comfort" for 127.0.0.1 at 2018-12-22 11:38:27 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"Comfort"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."cuisine" = ?[0m  [["cuisine", "Comfort"]]
+  Rendered reviews/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 48ms (Views: 41.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/?cuisine=Fusion" for 127.0.0.1 at 2018-12-22 11:38:28 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"Fusion"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."cuisine" = ?[0m  [["cuisine", "Fusion"]]
+  Rendered reviews/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 46ms (Views: 41.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:38:29 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 48ms (Views: 43.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews/7-yummy-in-your-belly" for 127.0.0.1 at 2018-12-22 11:40:42 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"7-yummy-in-your-belly"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 47ms (Views: 42.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reviews/7-yummy-in-your-belly/edit" for 127.0.0.1 at 2018-12-22 11:40:44 +1100
+Processing by ReviewsController#edit as HTML
+  Parameters: {"id"=>"7-yummy-in-your-belly"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (5.9ms)
+  Rendered reviews/edit.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 48ms (Views: 42.9ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/reviews/7-yummy-in-your-belly" for 127.0.0.1 at 2018-12-22 11:40:51 +1100
+Processing by ReviewsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"POpBH53NSCyyzcl9eo2gi0Z+KPOgaF58wpSxN/3LkPe3cdIvwqY91CzOt1dXje1FcgwTF3yngX+FVbeuGQ2yyQ==", "review"=>{"title"=>"Yummy in your belly!", "restaurant"=>"Baby Bo's ", "body"=>"Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.", "score"=>"8", "ambiance"=>"Casual", "cuisine"=>"American", "price"=>"Reasonable"}, "commit"=>"save review", "id"=>"7-yummy-in-your-belly"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "reviews" SET "cuisine" = ?, "updated_at" = ? WHERE "reviews"."id" = ?[0m  [["cuisine", "American"], ["updated_at", "2018-12-22 00:40:51.448939"], ["id", 7]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/reviews/7-yummy-in-your-belly
+Completed 302 Found in 7ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/reviews/7-yummy-in-your-belly" for 127.0.0.1 at 2018-12-22 11:40:51 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"7-yummy-in-your-belly"}
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 37ms (Views: 31.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:40:55 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 60ms (Views: 55.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2018-12-22 11:41:01 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 46ms (Views: 40.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:43:34 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 39ms (Views: 34.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/?price=Cheap" for 127.0.0.1 at 2018-12-22 11:43:42 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"price"=>"Cheap"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ?[0m  [["price", "Cheap"]]
+  Rendered reviews/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 44ms (Views: 40.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/?cuisine=American" for 127.0.0.1 at 2018-12-22 11:43:45 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"American"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."cuisine" = ?[0m  [["cuisine", "American"]]
+  Rendered reviews/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 45ms (Views: 40.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/?cuisine=American" for 127.0.0.1 at 2018-12-22 11:46:44 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"American"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."cuisine" = ?[0m  [["cuisine", "American"]]
+  Rendered reviews/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 28ms (Views: 24.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:46:46 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 58ms (Views: 49.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/reviews/8-yummy-street-food-styled-goodness" for 127.0.0.1 at 2018-12-22 11:46:50 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"8-yummy-street-food-styled-goodness"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 43ms (Views: 37.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:46:52 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 94ms (Views: 88.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?cuisine=American" for 127.0.0.1 at 2018-12-22 11:46:53 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"American"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."cuisine" = ?[0m  [["cuisine", "American"]]
+  Rendered reviews/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 49ms (Views: 43.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/?cuisine=Comfort" for 127.0.0.1 at 2018-12-22 11:46:54 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"Comfort"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."cuisine" = ?[0m  [["cuisine", "Comfort"]]
+  Rendered reviews/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 64ms (Views: 58.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?cuisine=Fusion" for 127.0.0.1 at 2018-12-22 11:46:56 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"Fusion"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."cuisine" = ?[0m  [["cuisine", "Fusion"]]
+  Rendered reviews/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 58ms (Views: 49.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/?cuisine=Comfort" for 127.0.0.1 at 2018-12-22 11:46:57 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"Comfort"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."cuisine" = ?[0m  [["cuisine", "Comfort"]]
+  Rendered reviews/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 45ms (Views: 40.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/?cuisine=Comfort&price=Pricey" for 127.0.0.1 at 2018-12-22 11:46:58 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"Comfort", "price"=>"Pricey"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ? AND "reviews"."cuisine" = ?[0m  [["price", "Pricey"], ["cuisine", "Comfort"]]
+  Rendered reviews/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 49ms (Views: 44.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?cuisine=Comfort&price=Pricey" for 127.0.0.1 at 2018-12-22 11:47:00 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"Comfort", "price"=>"Pricey"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ? AND "reviews"."cuisine" = ?[0m  [["price", "Pricey"], ["cuisine", "Comfort"]]
+  Rendered reviews/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 67ms (Views: 62.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?cuisine=Comfort&price=Pricey" for 127.0.0.1 at 2018-12-22 11:47:01 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"Comfort", "price"=>"Pricey"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ? AND "reviews"."cuisine" = ?[0m  [["price", "Pricey"], ["cuisine", "Comfort"]]
+  Rendered reviews/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 52ms (Views: 46.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/?cuisine=Comfort&price=Reasonable" for 127.0.0.1 at 2018-12-22 11:47:02 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"Comfort", "price"=>"Reasonable"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ? AND "reviews"."cuisine" = ?[0m  [["price", "Reasonable"], ["cuisine", "Comfort"]]
+  Rendered reviews/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 58ms (Views: 53.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?cuisine=Comfort&price=Reasonable" for 127.0.0.1 at 2018-12-22 11:47:03 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"Comfort", "price"=>"Reasonable"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ? AND "reviews"."cuisine" = ?[0m  [["price", "Reasonable"], ["cuisine", "Comfort"]]
+  Rendered reviews/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 45ms (Views: 40.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/?cuisine=Comfort&price=Cheap" for 127.0.0.1 at 2018-12-22 11:47:03 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"Comfort", "price"=>"Cheap"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ? AND "reviews"."cuisine" = ?[0m  [["price", "Cheap"], ["cuisine", "Comfort"]]
+  Rendered reviews/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 45ms (Views: 40.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 11:47:04 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 47ms (Views: 43.0ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddLocationToReviews (20181222010136)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "reviews" ADD "address" text[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "reviews" ADD "latitude" float[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "reviews" ADD "longitude" float[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181222010136"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2018-12-22 12:23:01 +1100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (93.3ms)
+Completed 200 OK in 343ms (Views: 307.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/reviews/6-cheap-and-fast/edit" for 127.0.0.1 at 2018-12-22 12:23:04 +1100
+Processing by ReviewsController#edit as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (32.4ms)
+  Rendered reviews/edit.html.erb within layouts/application (36.0ms)
+Completed 200 OK in 77ms (Views: 70.0ms | ActiveRecord: 1.5ms)
+
+
+Started PATCH "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2018-12-22 12:24:04 +1100
+Processing by ReviewsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j/WbasG+uUTNb9Ha7OU6TVjhGBbVhfrOFlPDnRrJ1B9Zm779ikrEErx2SzPXaOkJZGxBt3U34GNel/AGLUJ4MA==", "review"=>{"title"=>"Cheap and fast", "restaurant"=>"Macca's", "address"=>"203 1st Avenue, New York", "body"=>"Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.", "score"=>"7", "ambiance"=>"Family", "cuisine"=>"American", "price"=>"Cheap"}, "commit"=>"save review", "id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "reviews" SET "address" = ?, "latitude" = ?, "longitude" = ?, "updated_at" = ? WHERE "reviews"."id" = ?[0m  [["address", "203 1st Avenue, New York"], ["latitude", 40.7303389], ["longitude", -73.9835289], ["updated_at", "2018-12-22 01:24:05.844550"], ["id", 6]]
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/reviews/6-cheap-and-fast
+Completed 302 Found in 1687ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2018-12-22 12:24:05 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 28ms (Views: 24.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2018-12-22 12:24:46 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 31ms (Views: 26.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2018-12-22 12:25:03 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 30ms (Views: 26.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 12:26:02 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 44ms (Views: 38.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews/7-yummy-in-your-belly" for 127.0.0.1 at 2018-12-22 12:26:03 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"7-yummy-in-your-belly"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 40ms (Views: 35.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reviews/7-yummy-in-your-belly/edit" for 127.0.0.1 at 2018-12-22 12:26:05 +1100
+Processing by ReviewsController#edit as HTML
+  Parameters: {"id"=>"7-yummy-in-your-belly"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (8.7ms)
+  Rendered reviews/edit.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 56ms (Views: 50.4ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/reviews/7-yummy-in-your-belly" for 127.0.0.1 at 2018-12-22 12:26:31 +1100
+Processing by ReviewsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G1v5WnKhGtI1uMtEF5ZUG4kNmaUzdAPaFtVpykq98sGQwGpqLcpvKqu7tW46lhnVvX+iQe+73NlRFG9TrnvQ/w==", "review"=>{"title"=>"Yummy in your belly!", "restaurant"=>"Baby Bo's ", "address"=>"627 2nd Ave, New York", "body"=>"Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.", "score"=>"8", "ambiance"=>"Casual", "cuisine"=>"American", "price"=>"Reasonable"}, "commit"=>"save review", "id"=>"7-yummy-in-your-belly"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "reviews" SET "address" = ?, "latitude" = ?, "longitude" = ?, "updated_at" = ? WHERE "reviews"."id" = ?[0m  [["address", "627 2nd Ave, New York"], ["latitude", 40.7451021], ["longitude", -73.9759146], ["updated_at", "2018-12-22 01:26:32.915760"], ["id", 7]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/reviews/7-yummy-in-your-belly
+Completed 302 Found in 1593ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/reviews/7-yummy-in-your-belly" for 127.0.0.1 at 2018-12-22 12:26:32 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"7-yummy-in-your-belly"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 27ms (Views: 23.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 12:26:35 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 47ms (Views: 42.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/reviews/8-yummy-street-food-styled-goodness" for 127.0.0.1 at 2018-12-22 12:26:37 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"8-yummy-street-food-styled-goodness"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 50ms (Views: 43.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reviews/8-yummy-street-food-styled-goodness/edit" for 127.0.0.1 at 2018-12-22 12:27:46 +1100
+Processing by ReviewsController#edit as HTML
+  Parameters: {"id"=>"8-yummy-street-food-styled-goodness"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (9.1ms)
+  Rendered reviews/edit.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 51ms (Views: 45.7ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/reviews/8-yummy-street-food-styled-goodness" for 127.0.0.1 at 2018-12-22 12:27:51 +1100
+Processing by ReviewsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"9FLm7yxnzfr4UU7kINVSEFS3y2KjxH5e0Ykawg5MA1AlQI6c06LbnrgEBxbZV2MgAHHRCN/7GP1n+ZFfDDWbNw==", "review"=>{"title"=>"Yummy street-food styled goodness! ", "restaurant"=>"Mamaks", "address"=>"174 2nd Ave 11th St, New York", "body"=>"Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. ", "score"=>"9", "ambiance"=>"Fine dining", "cuisine"=>"Fusion", "price"=>"Pricey"}, "commit"=>"save review", "id"=>"8-yummy-street-food-styled-goodness"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "reviews" SET "address" = ?, "updated_at" = ? WHERE "reviews"."id" = ?[0m  [["address", "174 2nd Ave 11th St, New York"], ["updated_at", "2018-12-22 01:27:52.943792"], ["id", 8]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/reviews/8-yummy-street-food-styled-goodness
+Completed 302 Found in 1338ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/reviews/8-yummy-street-food-styled-goodness" for 127.0.0.1 at 2018-12-22 12:27:52 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"8-yummy-street-food-styled-goodness"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 35ms (Views: 30.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 12:27:55 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 108ms (Views: 103.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2018-12-22 13:00:26 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 82ms (Views: 38.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/reviews/6-cheap-and-fast/edit" for 127.0.0.1 at 2018-12-22 13:00:28 +1100
+Processing by ReviewsController#edit as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (32.4ms)
+  Rendered reviews/edit.html.erb within layouts/application (36.1ms)
+Completed 200 OK in 80ms (Views: 72.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 13:00:31 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 79ms (Views: 74.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews/8-yummy-street-food-styled-goodness" for 127.0.0.1 at 2018-12-22 13:00:32 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"8-yummy-street-food-styled-goodness"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 47ms (Views: 42.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews/8-yummy-street-food-styled-goodness/edit" for 127.0.0.1 at 2018-12-22 13:00:48 +1100
+Processing by ReviewsController#edit as HTML
+  Parameters: {"id"=>"8-yummy-street-food-styled-goodness"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering reviews/edit.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (6.9ms)
+  Rendered reviews/edit.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 48ms (Views: 43.5ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/reviews/8-yummy-street-food-styled-goodness" for 127.0.0.1 at 2018-12-22 13:00:54 +1100
+Processing by ReviewsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WC56JgXVtsWvAgV9Y+icLms9R+peWvKxUOTc4PZrddyJPBJV+hCgoe9XTI+aaq0eP/tdgCJllBLmlFd99BLtuw==", "review"=>{"title"=>"Yummy street-food styled goodness! ", "restaurant"=>"Mamaks", "address"=>"15 Goulburn St, Sydney", "body"=>"Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. ", "score"=>"9", "ambiance"=>"Fine dining", "cuisine"=>"Fusion", "price"=>"Pricey"}, "commit"=>"save review", "id"=>"8-yummy-street-food-styled-goodness"}
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (6.8ms)[0m  [1m[33mUPDATE "reviews" SET "address" = ?, "latitude" = ?, "longitude" = ?, "updated_at" = ? WHERE "reviews"."id" = ?[0m  [["address", "15 Goulburn St, Sydney"], ["latitude", -33.8777175], ["longitude", 151.2042284], ["updated_at", "2018-12-22 02:00:55.957653"], ["id", 8]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/reviews/8-yummy-street-food-styled-goodness
+Completed 302 Found in 1508ms (ActiveRecord: 8.3ms)
+
+
+Started GET "/reviews/8-yummy-street-food-styled-goodness" for 127.0.0.1 at 2018-12-22 13:00:55 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"8-yummy-street-food-styled-goodness"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 25ms (Views: 22.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 13:01:02 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 46ms (Views: 41.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/?location=sydney" for 127.0.0.1 at 2018-12-22 13:01:21 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"location"=>"sydney"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (1.2ms)[0m  [1m[34mSELECT reviews.*, (69.09332411348201 * ABS(reviews.latitude - -33.8548157) * 0.7071067811865475) + (59.836573914187355 * ABS(reviews.longitude - 151.2164539) * 0.7071067811865475) AS distance, CASE WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude >= 151.2164539) THEN  45.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude >= 151.2164539) THEN 135.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude <  151.2164539) THEN 225.0 WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude <  151.2164539) THEN 315.0 END AS bearing FROM "reviews" WHERE (reviews.latitude BETWEEN -34.1442792662217 AND -33.565352133778305 AND reviews.longitude BETWEEN 150.8678923811065 AND 151.56501541889352) ORDER BY distance ASC[0m
+  Rendered reviews/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 1292ms (Views: 22.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 13:01:25 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 51ms (Views: 46.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 13:08:03 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 28ms (Views: 25.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 13:17:20 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 31ms (Views: 27.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/?location=sydney" for 127.0.0.1 at 2018-12-22 13:17:24 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"location"=>"sydney"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT reviews.*, (69.09332411348201 * ABS(reviews.latitude - -33.8548157) * 0.7071067811865475) + (59.836573914187355 * ABS(reviews.longitude - 151.2164539) * 0.7071067811865475) AS distance, CASE WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude >= 151.2164539) THEN  45.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude >= 151.2164539) THEN 135.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude <  151.2164539) THEN 225.0 WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude <  151.2164539) THEN 315.0 END AS bearing FROM "reviews" WHERE (reviews.latitude BETWEEN -34.1442792662217 AND -33.565352133778305 AND reviews.longitude BETWEEN 150.8678923811065 AND 151.56501541889352) ORDER BY distance ASC[0m
+  Rendered reviews/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 1667ms (Views: 21.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/?location=new+york" for 127.0.0.1 at 2018-12-22 13:17:31 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"location"=>"new york"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT reviews.*, (69.09332411348201 * ABS(reviews.latitude - 40.7308619) * 0.7071067811865475) + (59.836573914187355 * ABS(reviews.longitude - -73.9871558) * 0.7071067811865475) AS distance, CASE WHEN (reviews.latitude >= 40.7308619 AND reviews.longitude >= -73.9871558) THEN  45.0 WHEN (reviews.latitude <  40.7308619 AND reviews.longitude >= -73.9871558) THEN 135.0 WHEN (reviews.latitude <  40.7308619 AND reviews.longitude <  -73.9871558) THEN 225.0 WHEN (reviews.latitude >= 40.7308619 AND reviews.longitude <  -73.9871558) THEN 315.0 END AS bearing FROM "reviews" WHERE (reviews.latitude BETWEEN 40.4413983337783 AND 41.0203254662217 AND reviews.longitude BETWEEN -74.36914322162484 AND -73.60516837837515) ORDER BY distance ASC[0m
+  Rendered reviews/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 1363ms (Views: 28.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 13:17:38 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 41ms (Views: 37.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 13:19:47 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 33ms (Views: 29.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?location=sydney" for 127.0.0.1 at 2018-12-22 13:19:52 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"location"=>"sydney"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT reviews.*, (69.09332411348201 * ABS(reviews.latitude - -33.8548157) * 0.7071067811865475) + (59.836573914187355 * ABS(reviews.longitude - 151.2164539) * 0.7071067811865475) AS distance, CASE WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude >= 151.2164539) THEN  45.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude >= 151.2164539) THEN 135.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude <  151.2164539) THEN 225.0 WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude <  151.2164539) THEN 315.0 END AS bearing FROM "reviews" WHERE (reviews.latitude BETWEEN -34.1442792662217 AND -33.565352133778305 AND reviews.longitude BETWEEN 150.8678923811065 AND 151.56501541889352) ORDER BY distance ASC[0m
+  Rendered reviews/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 1357ms (Views: 21.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews/8-yummy-street-food-styled-goodness" for 127.0.0.1 at 2018-12-22 13:23:45 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"8-yummy-street-food-styled-goodness"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 49ms (Views: 43.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 13:23:48 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 48ms (Views: 42.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews/7-yummy-in-your-belly" for 127.0.0.1 at 2018-12-22 13:23:49 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"7-yummy-in-your-belly"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 47ms (Views: 40.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 13:23:52 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 55ms (Views: 49.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?location=new+york&price=&cuisine=" for 127.0.0.1 at 2018-12-22 13:23:56 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"location"=>"new york", "price"=>"", "cuisine"=>""}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT reviews.*, (69.09332411348201 * ABS(reviews.latitude - 40.7308619) * 0.7071067811865475) + (59.836573914187355 * ABS(reviews.longitude - -73.9871558) * 0.7071067811865475) AS distance, CASE WHEN (reviews.latitude >= 40.7308619 AND reviews.longitude >= -73.9871558) THEN  45.0 WHEN (reviews.latitude <  40.7308619 AND reviews.longitude >= -73.9871558) THEN 135.0 WHEN (reviews.latitude <  40.7308619 AND reviews.longitude <  -73.9871558) THEN 225.0 WHEN (reviews.latitude >= 40.7308619 AND reviews.longitude <  -73.9871558) THEN 315.0 END AS bearing FROM "reviews" WHERE (reviews.latitude BETWEEN 40.4413983337783 AND 41.0203254662217 AND reviews.longitude BETWEEN -74.36914322162484 AND -73.60516837837515) ORDER BY distance ASC[0m
+  Rendered reviews/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 1478ms (Views: 22.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/?cuisine=&price=Reasonable" for 127.0.0.1 at 2018-12-22 13:24:00 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"", "price"=>"Reasonable"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ?[0m  [["price", "Reasonable"]]
+  Rendered reviews/index.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 51ms (Views: 45.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?cuisine=&price=Pricey" for 127.0.0.1 at 2018-12-22 13:25:43 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"", "price"=>"Pricey"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ?[0m  [["price", "Pricey"]]
+  Rendered reviews/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 43ms (Views: 37.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews/8-yummy-street-food-styled-goodness" for 127.0.0.1 at 2018-12-22 13:25:51 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"8-yummy-street-food-styled-goodness"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 53ms (Views: 48.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/?location=sydney&price=Pricey&cuisine=" for 127.0.0.1 at 2018-12-22 13:25:56 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"location"=>"sydney", "price"=>"Pricey", "cuisine"=>""}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT reviews.*, (69.09332411348201 * ABS(reviews.latitude - -33.8548157) * 0.7071067811865475) + (59.836573914187355 * ABS(reviews.longitude - 151.2164539) * 0.7071067811865475) AS distance, CASE WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude >= 151.2164539) THEN  45.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude >= 151.2164539) THEN 135.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude <  151.2164539) THEN 225.0 WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude <  151.2164539) THEN 315.0 END AS bearing FROM "reviews" WHERE "reviews"."price" = ? AND (reviews.latitude BETWEEN -34.1442792662217 AND -33.565352133778305 AND reviews.longitude BETWEEN 150.8678923811065 AND 151.56501541889352) ORDER BY distance ASC[0m  [["price", "Pricey"]]
+  Rendered reviews/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 1308ms (Views: 23.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?cuisine=Fusion&price=Pricey" for 127.0.0.1 at 2018-12-22 13:26:05 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"Fusion", "price"=>"Pricey"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ? AND "reviews"."cuisine" = ?[0m  [["price", "Pricey"], ["cuisine", "Fusion"]]
+  Rendered reviews/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 43ms (Views: 38.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/?location=sydney&price=Pricey&cuisine=Fusion" for 127.0.0.1 at 2018-12-22 13:26:09 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"location"=>"sydney", "price"=>"Pricey", "cuisine"=>"Fusion"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT reviews.*, (69.09332411348201 * ABS(reviews.latitude - -33.8548157) * 0.7071067811865475) + (59.836573914187355 * ABS(reviews.longitude - 151.2164539) * 0.7071067811865475) AS distance, CASE WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude >= 151.2164539) THEN  45.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude >= 151.2164539) THEN 135.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude <  151.2164539) THEN 225.0 WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude <  151.2164539) THEN 315.0 END AS bearing FROM "reviews" WHERE "reviews"."price" = ? AND "reviews"."cuisine" = ? AND (reviews.latitude BETWEEN -34.1442792662217 AND -33.565352133778305 AND reviews.longitude BETWEEN 150.8678923811065 AND 151.56501541889352) ORDER BY distance ASC[0m  [["price", "Pricey"], ["cuisine", "Fusion"]]
+  Rendered reviews/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 1347ms (Views: 23.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/?cuisine=Fusion&price=Cheap" for 127.0.0.1 at 2018-12-22 13:29:47 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"Fusion", "price"=>"Cheap"}
+  Rendering reviews/index.html.erb within layouts/application
+  Rendered reviews/index.html.erb within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Applications/MAMP/htdocs/superhi-bien/app/views/reviews/index.html.erb:10: syntax error, unexpected ')', expecting keyword_end
+isine, location: @location)) );@output_buffer.safe_append='
+                              ^
+/Applications/MAMP/htdocs/superhi-bien/app/views/reviews/index.html.erb:11: syntax error, unexpected ')', expecting keyword_end
+isine, location: @location)) );@output_buffer.safe_append='
+                              ^
+/Applications/MAMP/htdocs/superhi-bien/app/views/reviews/index.html.erb:16: syntax error, unexpected ')', expecting keyword_end
+rice, location: @location) ) );@output_buffer.safe_append='
+                              ^
+/Applications/MAMP/htdocs/superhi-bien/app/views/reviews/index.html.erb:17: syntax error, unexpected ')', expecting keyword_end
+price, location: @location)) );@output_buffer.safe_append='
+                              ^
+/Applications/MAMP/htdocs/superhi-bien/app/views/reviews/index.html.erb:18: syntax error, unexpected ')', expecting keyword_end
+price, location: @location)) );@output_buffer.safe_append='
+                              ^):
+  
+app/views/reviews/index.html.erb:10: syntax error, unexpected ')', expecting keyword_end
+app/views/reviews/index.html.erb:11: syntax error, unexpected ')', expecting keyword_end
+app/views/reviews/index.html.erb:16: syntax error, unexpected ')', expecting keyword_end
+app/views/reviews/index.html.erb:17: syntax error, unexpected ')', expecting keyword_end
+app/views/reviews/index.html.erb:18: syntax error, unexpected ')', expecting keyword_end
+Started GET "/?cuisine=Fusion&price=Cheap" for 127.0.0.1 at 2018-12-22 13:30:11 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"Fusion", "price"=>"Cheap"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ? AND "reviews"."cuisine" = ?[0m  [["price", "Cheap"], ["cuisine", "Fusion"]]
+  Rendered reviews/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 29ms (Views: 26.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 13:30:14 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 50ms (Views: 46.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?price=Cheap" for 127.0.0.1 at 2018-12-22 13:30:15 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"price"=>"Cheap"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ?[0m  [["price", "Cheap"]]
+  Rendered reviews/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 48ms (Views: 43.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?location=new+york&price=Cheap&cuisine=" for 127.0.0.1 at 2018-12-22 13:30:21 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"location"=>"new york", "price"=>"Cheap", "cuisine"=>""}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT reviews.*, (69.09332411348201 * ABS(reviews.latitude - 40.7308619) * 0.7071067811865475) + (59.836573914187355 * ABS(reviews.longitude - -73.9871558) * 0.7071067811865475) AS distance, CASE WHEN (reviews.latitude >= 40.7308619 AND reviews.longitude >= -73.9871558) THEN  45.0 WHEN (reviews.latitude <  40.7308619 AND reviews.longitude >= -73.9871558) THEN 135.0 WHEN (reviews.latitude <  40.7308619 AND reviews.longitude <  -73.9871558) THEN 225.0 WHEN (reviews.latitude >= 40.7308619 AND reviews.longitude <  -73.9871558) THEN 315.0 END AS bearing FROM "reviews" WHERE "reviews"."price" = ? AND (reviews.latitude BETWEEN 40.4413983337783 AND 41.0203254662217 AND reviews.longitude BETWEEN -74.36914322162484 AND -73.60516837837515) ORDER BY distance ASC[0m  [["price", "Cheap"]]
+  Rendered reviews/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 1557ms (Views: 22.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/?cuisine=American&location=new+york&price=Cheap" for 127.0.0.1 at 2018-12-22 13:30:27 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"American", "location"=>"new york", "price"=>"Cheap"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT reviews.*, (69.09332411348201 * ABS(reviews.latitude - 40.7308619) * 0.7071067811865475) + (59.836573914187355 * ABS(reviews.longitude - -73.9871558) * 0.7071067811865475) AS distance, CASE WHEN (reviews.latitude >= 40.7308619 AND reviews.longitude >= -73.9871558) THEN  45.0 WHEN (reviews.latitude <  40.7308619 AND reviews.longitude >= -73.9871558) THEN 135.0 WHEN (reviews.latitude <  40.7308619 AND reviews.longitude <  -73.9871558) THEN 225.0 WHEN (reviews.latitude >= 40.7308619 AND reviews.longitude <  -73.9871558) THEN 315.0 END AS bearing FROM "reviews" WHERE "reviews"."price" = ? AND "reviews"."cuisine" = ? AND (reviews.latitude BETWEEN 40.4413983337783 AND 41.0203254662217 AND reviews.longitude BETWEEN -74.36914322162484 AND -73.60516837837515) ORDER BY distance ASC[0m  [["price", "Cheap"], ["cuisine", "American"]]
+  Rendered reviews/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 1388ms (Views: 22.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?cuisine=Fusion&location=new+york&price=Cheap" for 127.0.0.1 at 2018-12-22 13:30:31 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"Fusion", "location"=>"new york", "price"=>"Cheap"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT reviews.*, (69.09332411348201 * ABS(reviews.latitude - 40.7308619) * 0.7071067811865475) + (59.836573914187355 * ABS(reviews.longitude - -73.9871558) * 0.7071067811865475) AS distance, CASE WHEN (reviews.latitude >= 40.7308619 AND reviews.longitude >= -73.9871558) THEN  45.0 WHEN (reviews.latitude <  40.7308619 AND reviews.longitude >= -73.9871558) THEN 135.0 WHEN (reviews.latitude <  40.7308619 AND reviews.longitude <  -73.9871558) THEN 225.0 WHEN (reviews.latitude >= 40.7308619 AND reviews.longitude <  -73.9871558) THEN 315.0 END AS bearing FROM "reviews" WHERE "reviews"."price" = ? AND "reviews"."cuisine" = ? AND (reviews.latitude BETWEEN 40.4413983337783 AND 41.0203254662217 AND reviews.longitude BETWEEN -74.36914322162484 AND -73.60516837837515) ORDER BY distance ASC[0m  [["price", "Cheap"], ["cuisine", "Fusion"]]
+  Rendered reviews/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 1827ms (Views: 22.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/?cuisine=Comfort&location=new+york&price=Cheap" for 127.0.0.1 at 2018-12-22 13:30:34 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"Comfort", "location"=>"new york", "price"=>"Cheap"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT reviews.*, (69.09332411348201 * ABS(reviews.latitude - 40.7308619) * 0.7071067811865475) + (59.836573914187355 * ABS(reviews.longitude - -73.9871558) * 0.7071067811865475) AS distance, CASE WHEN (reviews.latitude >= 40.7308619 AND reviews.longitude >= -73.9871558) THEN  45.0 WHEN (reviews.latitude <  40.7308619 AND reviews.longitude >= -73.9871558) THEN 135.0 WHEN (reviews.latitude <  40.7308619 AND reviews.longitude <  -73.9871558) THEN 225.0 WHEN (reviews.latitude >= 40.7308619 AND reviews.longitude <  -73.9871558) THEN 315.0 END AS bearing FROM "reviews" WHERE "reviews"."price" = ? AND "reviews"."cuisine" = ? AND (reviews.latitude BETWEEN 40.4413983337783 AND 41.0203254662217 AND reviews.longitude BETWEEN -74.36914322162484 AND -73.60516837837515) ORDER BY distance ASC[0m  [["price", "Cheap"], ["cuisine", "Comfort"]]
+  Rendered reviews/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 1365ms (Views: 25.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?cuisine=Comfort&location=new+york&price=Reasonable" for 127.0.0.1 at 2018-12-22 13:30:37 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"Comfort", "location"=>"new york", "price"=>"Reasonable"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT reviews.*, (69.09332411348201 * ABS(reviews.latitude - 40.7308619) * 0.7071067811865475) + (59.836573914187355 * ABS(reviews.longitude - -73.9871558) * 0.7071067811865475) AS distance, CASE WHEN (reviews.latitude >= 40.7308619 AND reviews.longitude >= -73.9871558) THEN  45.0 WHEN (reviews.latitude <  40.7308619 AND reviews.longitude >= -73.9871558) THEN 135.0 WHEN (reviews.latitude <  40.7308619 AND reviews.longitude <  -73.9871558) THEN 225.0 WHEN (reviews.latitude >= 40.7308619 AND reviews.longitude <  -73.9871558) THEN 315.0 END AS bearing FROM "reviews" WHERE "reviews"."price" = ? AND "reviews"."cuisine" = ? AND (reviews.latitude BETWEEN 40.4413983337783 AND 41.0203254662217 AND reviews.longitude BETWEEN -74.36914322162484 AND -73.60516837837515) ORDER BY distance ASC[0m  [["price", "Reasonable"], ["cuisine", "Comfort"]]
+  Rendered reviews/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 1340ms (Views: 22.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/?cuisine=Comfort&location=new+york&price=Cheap" for 127.0.0.1 at 2018-12-22 13:30:40 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"Comfort", "location"=>"new york", "price"=>"Cheap"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT reviews.*, (69.09332411348201 * ABS(reviews.latitude - 40.7308619) * 0.7071067811865475) + (59.836573914187355 * ABS(reviews.longitude - -73.9871558) * 0.7071067811865475) AS distance, CASE WHEN (reviews.latitude >= 40.7308619 AND reviews.longitude >= -73.9871558) THEN  45.0 WHEN (reviews.latitude <  40.7308619 AND reviews.longitude >= -73.9871558) THEN 135.0 WHEN (reviews.latitude <  40.7308619 AND reviews.longitude <  -73.9871558) THEN 225.0 WHEN (reviews.latitude >= 40.7308619 AND reviews.longitude <  -73.9871558) THEN 315.0 END AS bearing FROM "reviews" WHERE "reviews"."price" = ? AND "reviews"."cuisine" = ? AND (reviews.latitude BETWEEN 40.4413983337783 AND 41.0203254662217 AND reviews.longitude BETWEEN -74.36914322162484 AND -73.60516837837515) ORDER BY distance ASC[0m  [["price", "Cheap"], ["cuisine", "Comfort"]]
+  Rendered reviews/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 1278ms (Views: 26.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 13:30:42 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 54ms (Views: 49.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/reviews/7-yummy-in-your-belly" for 127.0.0.1 at 2018-12-22 13:30:43 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"7-yummy-in-your-belly"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 48ms (Views: 43.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 13:30:45 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 55ms (Views: 50.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2018-12-22 13:30:46 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 45ms (Views: 39.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 13:30:51 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 46ms (Views: 40.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?cuisine=American" for 127.0.0.1 at 2018-12-22 13:30:53 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"American"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."cuisine" = ?[0m  [["cuisine", "American"]]
+  Rendered reviews/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 43ms (Views: 38.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?cuisine=American&price=Cheap" for 127.0.0.1 at 2018-12-22 13:30:54 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"American", "price"=>"Cheap"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ? AND "reviews"."cuisine" = ?[0m  [["price", "Cheap"], ["cuisine", "American"]]
+  Rendered reviews/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 47ms (Views: 42.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?location=New+york&price=Cheap&cuisine=American" for 127.0.0.1 at 2018-12-22 13:30:59 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"location"=>"New york", "price"=>"Cheap", "cuisine"=>"American"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT reviews.*, (69.09332411348201 * ABS(reviews.latitude - 40.7308619) * 0.7071067811865475) + (59.836573914187355 * ABS(reviews.longitude - -73.9871558) * 0.7071067811865475) AS distance, CASE WHEN (reviews.latitude >= 40.7308619 AND reviews.longitude >= -73.9871558) THEN  45.0 WHEN (reviews.latitude <  40.7308619 AND reviews.longitude >= -73.9871558) THEN 135.0 WHEN (reviews.latitude <  40.7308619 AND reviews.longitude <  -73.9871558) THEN 225.0 WHEN (reviews.latitude >= 40.7308619 AND reviews.longitude <  -73.9871558) THEN 315.0 END AS bearing FROM "reviews" WHERE "reviews"."price" = ? AND "reviews"."cuisine" = ? AND (reviews.latitude BETWEEN 40.4413983337783 AND 41.0203254662217 AND reviews.longitude BETWEEN -74.36914322162484 AND -73.60516837837515) ORDER BY distance ASC[0m  [["price", "Cheap"], ["cuisine", "American"]]
+  Rendered reviews/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 1277ms (Views: 22.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/?cuisine=American&location=New+york&price=Reasonable" for 127.0.0.1 at 2018-12-22 13:31:02 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"American", "location"=>"New york", "price"=>"Reasonable"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT reviews.*, (69.09332411348201 * ABS(reviews.latitude - 40.7308619) * 0.7071067811865475) + (59.836573914187355 * ABS(reviews.longitude - -73.9871558) * 0.7071067811865475) AS distance, CASE WHEN (reviews.latitude >= 40.7308619 AND reviews.longitude >= -73.9871558) THEN  45.0 WHEN (reviews.latitude <  40.7308619 AND reviews.longitude >= -73.9871558) THEN 135.0 WHEN (reviews.latitude <  40.7308619 AND reviews.longitude <  -73.9871558) THEN 225.0 WHEN (reviews.latitude >= 40.7308619 AND reviews.longitude <  -73.9871558) THEN 315.0 END AS bearing FROM "reviews" WHERE "reviews"."price" = ? AND "reviews"."cuisine" = ? AND (reviews.latitude BETWEEN 40.4413983337783 AND 41.0203254662217 AND reviews.longitude BETWEEN -74.36914322162484 AND -73.60516837837515) ORDER BY distance ASC[0m  [["price", "Reasonable"], ["cuisine", "American"]]
+  Rendered reviews/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 1525ms (Views: 23.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 13:31:06 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 49ms (Views: 42.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 14:39:22 +1100
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (102.0ms)
+Completed 200 OK in 326ms (Views: 306.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/reviews/new" for 127.0.0.1 at 2018-12-22 14:39:27 +1100
+Processing by ReviewsController#new as HTML
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (62.4ms)
+  Rendered reviews/new.html.erb within layouts/application (69.6ms)
+Completed 200 OK in 98ms (Views: 92.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2018-12-22 14:48:57 +1100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oVc1CvyTsS0FT9ZtYOztwAQSeGtyAkmY6zhpyIELxceGE/Hm94mSIJxCAa7jv6cn28T0cq/Eo3iO1C3Idf5jSg==", "review"=>{"title"=>"The best halal place", "restaurant"=>"Rashays", "address"=>"94 Darlinghurst Rd, Sydney", "body"=>"Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.", "cuisine"=>"American", "ambiance"=>"Casual", "score"=>"6", "price"=>"Cheap"}, "commit"=>"Create Review"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "body", "score", "restaurant", "price", "cuisine", "created_at", "updated_at", "ambiance", "address", "latitude", "longitude") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "The best halal place"], ["body", "Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua."], ["score", 6], ["restaurant", "Rashays"], ["price", "Cheap"], ["cuisine", "American"], ["created_at", "2018-12-22 03:48:59.465030"], ["updated_at", "2018-12-22 03:48:59.465030"], ["ambiance", "Casual"], ["address", "94 Darlinghurst Rd, Sydney"], ["latitude", -33.8753491], ["longitude", 151.222454161113]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1607ms (ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 14:48:59 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 24ms (Views: 20.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/?price=Cheap" for 127.0.0.1 at 2018-12-22 14:49:13 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"price"=>"Cheap"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ?[0m  [["price", "Cheap"]]
+  Rendered reviews/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 43ms (Views: 38.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 14:49:16 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 49ms (Views: 43.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?cuisine=American" for 127.0.0.1 at 2018-12-22 14:49:18 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"American"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."cuisine" = ?[0m  [["cuisine", "American"]]
+  Rendered reviews/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 45ms (Views: 41.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?location=sydney&price=&cuisine=American" for 127.0.0.1 at 2018-12-22 14:49:22 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"location"=>"sydney", "price"=>"", "cuisine"=>"American"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT reviews.*, (69.09332411348201 * ABS(reviews.latitude - -33.8548157) * 0.7071067811865475) + (59.836573914187355 * ABS(reviews.longitude - 151.2164539) * 0.7071067811865475) AS distance, CASE WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude >= 151.2164539) THEN  45.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude >= 151.2164539) THEN 135.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude <  151.2164539) THEN 225.0 WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude <  151.2164539) THEN 315.0 END AS bearing FROM "reviews" WHERE "reviews"."cuisine" = ? AND (reviews.latitude BETWEEN -34.1442792662217 AND -33.565352133778305 AND reviews.longitude BETWEEN 150.8678923811065 AND 151.56501541889352) ORDER BY distance ASC[0m  [["cuisine", "American"]]
+  Rendered reviews/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 1681ms (Views: 39.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/?cuisine=American&location=sydney&price=Cheap" for 127.0.0.1 at 2018-12-22 14:49:30 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"American", "location"=>"sydney", "price"=>"Cheap"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT reviews.*, (69.09332411348201 * ABS(reviews.latitude - -33.8548157) * 0.7071067811865475) + (59.836573914187355 * ABS(reviews.longitude - 151.2164539) * 0.7071067811865475) AS distance, CASE WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude >= 151.2164539) THEN  45.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude >= 151.2164539) THEN 135.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude <  151.2164539) THEN 225.0 WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude <  151.2164539) THEN 315.0 END AS bearing FROM "reviews" WHERE "reviews"."price" = ? AND "reviews"."cuisine" = ? AND (reviews.latitude BETWEEN -34.1442792662217 AND -33.565352133778305 AND reviews.longitude BETWEEN 150.8678923811065 AND 151.56501541889352) ORDER BY distance ASC[0m  [["price", "Cheap"], ["cuisine", "American"]]
+  Rendered reviews/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 1302ms (Views: 25.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?cuisine=American&location=sydney&price=Reasonable" for 127.0.0.1 at 2018-12-22 14:49:32 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"American", "location"=>"sydney", "price"=>"Reasonable"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT reviews.*, (69.09332411348201 * ABS(reviews.latitude - -33.8548157) * 0.7071067811865475) + (59.836573914187355 * ABS(reviews.longitude - 151.2164539) * 0.7071067811865475) AS distance, CASE WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude >= 151.2164539) THEN  45.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude >= 151.2164539) THEN 135.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude <  151.2164539) THEN 225.0 WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude <  151.2164539) THEN 315.0 END AS bearing FROM "reviews" WHERE "reviews"."price" = ? AND "reviews"."cuisine" = ? AND (reviews.latitude BETWEEN -34.1442792662217 AND -33.565352133778305 AND reviews.longitude BETWEEN 150.8678923811065 AND 151.56501541889352) ORDER BY distance ASC[0m  [["price", "Reasonable"], ["cuisine", "American"]]
+  Rendered reviews/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 1482ms (Views: 27.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?cuisine=American&location=sydney&price=Pricey" for 127.0.0.1 at 2018-12-22 14:49:37 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"American", "location"=>"sydney", "price"=>"Pricey"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT reviews.*, (69.09332411348201 * ABS(reviews.latitude - -33.8548157) * 0.7071067811865475) + (59.836573914187355 * ABS(reviews.longitude - 151.2164539) * 0.7071067811865475) AS distance, CASE WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude >= 151.2164539) THEN  45.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude >= 151.2164539) THEN 135.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude <  151.2164539) THEN 225.0 WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude <  151.2164539) THEN 315.0 END AS bearing FROM "reviews" WHERE "reviews"."price" = ? AND "reviews"."cuisine" = ? AND (reviews.latitude BETWEEN -34.1442792662217 AND -33.565352133778305 AND reviews.longitude BETWEEN 150.8678923811065 AND 151.56501541889352) ORDER BY distance ASC[0m  [["price", "Pricey"], ["cuisine", "American"]]
+  Rendered reviews/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 1374ms (Views: 24.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/?cuisine=Comfort&location=sydney&price=Pricey" for 127.0.0.1 at 2018-12-22 14:49:44 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"Comfort", "location"=>"sydney", "price"=>"Pricey"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT reviews.*, (69.09332411348201 * ABS(reviews.latitude - -33.8548157) * 0.7071067811865475) + (59.836573914187355 * ABS(reviews.longitude - 151.2164539) * 0.7071067811865475) AS distance, CASE WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude >= 151.2164539) THEN  45.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude >= 151.2164539) THEN 135.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude <  151.2164539) THEN 225.0 WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude <  151.2164539) THEN 315.0 END AS bearing FROM "reviews" WHERE "reviews"."price" = ? AND "reviews"."cuisine" = ? AND (reviews.latitude BETWEEN -34.1442792662217 AND -33.565352133778305 AND reviews.longitude BETWEEN 150.8678923811065 AND 151.56501541889352) ORDER BY distance ASC[0m  [["price", "Pricey"], ["cuisine", "Comfort"]]
+  Rendered reviews/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 1325ms (Views: 24.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 14:49:48 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 53ms (Views: 47.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/reviews/9-the-best-halal-place" for 127.0.0.1 at 2018-12-22 14:49:49 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"9-the-best-halal-place"}
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 66ms (Views: 54.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 14:49:59 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 62ms (Views: 56.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews/9-the-best-halal-place" for 127.0.0.1 at 2018-12-22 14:50:02 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"9-the-best-halal-place"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 65ms (Views: 59.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 14:50:03 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 69ms (Views: 64.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?location=Sydney&price=&cuisine=" for 127.0.0.1 at 2018-12-22 14:50:07 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"location"=>"Sydney", "price"=>"", "cuisine"=>""}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT reviews.*, (69.09332411348201 * ABS(reviews.latitude - -33.8548157) * 0.7071067811865475) + (59.836573914187355 * ABS(reviews.longitude - 151.2164539) * 0.7071067811865475) AS distance, CASE WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude >= 151.2164539) THEN  45.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude >= 151.2164539) THEN 135.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude <  151.2164539) THEN 225.0 WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude <  151.2164539) THEN 315.0 END AS bearing FROM "reviews" WHERE (reviews.latitude BETWEEN -34.1442792662217 AND -33.565352133778305 AND reviews.longitude BETWEEN 150.8678923811065 AND 151.56501541889352) ORDER BY distance ASC[0m
+  Rendered reviews/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 1339ms (Views: 28.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?cuisine=American&location=Sydney&price=" for 127.0.0.1 at 2018-12-22 14:50:12 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"American", "location"=>"Sydney", "price"=>""}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT reviews.*, (69.09332411348201 * ABS(reviews.latitude - -33.8548157) * 0.7071067811865475) + (59.836573914187355 * ABS(reviews.longitude - 151.2164539) * 0.7071067811865475) AS distance, CASE WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude >= 151.2164539) THEN  45.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude >= 151.2164539) THEN 135.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude <  151.2164539) THEN 225.0 WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude <  151.2164539) THEN 315.0 END AS bearing FROM "reviews" WHERE "reviews"."cuisine" = ? AND (reviews.latitude BETWEEN -34.1442792662217 AND -33.565352133778305 AND reviews.longitude BETWEEN 150.8678923811065 AND 151.56501541889352) ORDER BY distance ASC[0m  [["cuisine", "American"]]
+  Rendered reviews/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 1327ms (Views: 40.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?cuisine=American&location=Sydney&price=Cheap" for 127.0.0.1 at 2018-12-22 14:50:16 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"American", "location"=>"Sydney", "price"=>"Cheap"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT reviews.*, (69.09332411348201 * ABS(reviews.latitude - -33.8548157) * 0.7071067811865475) + (59.836573914187355 * ABS(reviews.longitude - 151.2164539) * 0.7071067811865475) AS distance, CASE WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude >= 151.2164539) THEN  45.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude >= 151.2164539) THEN 135.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude <  151.2164539) THEN 225.0 WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude <  151.2164539) THEN 315.0 END AS bearing FROM "reviews" WHERE "reviews"."price" = ? AND "reviews"."cuisine" = ? AND (reviews.latitude BETWEEN -34.1442792662217 AND -33.565352133778305 AND reviews.longitude BETWEEN 150.8678923811065 AND 151.56501541889352) ORDER BY distance ASC[0m  [["price", "Cheap"], ["cuisine", "American"]]
+  Rendered reviews/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 1356ms (Views: 22.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/?cuisine=American&location=Sydney&price=Pricey" for 127.0.0.1 at 2018-12-22 14:50:20 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"American", "location"=>"Sydney", "price"=>"Pricey"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT reviews.*, (69.09332411348201 * ABS(reviews.latitude - -33.8548157) * 0.7071067811865475) + (59.836573914187355 * ABS(reviews.longitude - 151.2164539) * 0.7071067811865475) AS distance, CASE WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude >= 151.2164539) THEN  45.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude >= 151.2164539) THEN 135.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude <  151.2164539) THEN 225.0 WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude <  151.2164539) THEN 315.0 END AS bearing FROM "reviews" WHERE "reviews"."price" = ? AND "reviews"."cuisine" = ? AND (reviews.latitude BETWEEN -34.1442792662217 AND -33.565352133778305 AND reviews.longitude BETWEEN 150.8678923811065 AND 151.56501541889352) ORDER BY distance ASC[0m  [["price", "Pricey"], ["cuisine", "American"]]
+  Rendered reviews/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 1364ms (Views: 22.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?cuisine=Fusion&location=Sydney&price=Pricey" for 127.0.0.1 at 2018-12-22 14:50:25 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"Fusion", "location"=>"Sydney", "price"=>"Pricey"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT reviews.*, (69.09332411348201 * ABS(reviews.latitude - -33.8548157) * 0.7071067811865475) + (59.836573914187355 * ABS(reviews.longitude - 151.2164539) * 0.7071067811865475) AS distance, CASE WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude >= 151.2164539) THEN  45.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude >= 151.2164539) THEN 135.0 WHEN (reviews.latitude <  -33.8548157 AND reviews.longitude <  151.2164539) THEN 225.0 WHEN (reviews.latitude >= -33.8548157 AND reviews.longitude <  151.2164539) THEN 315.0 END AS bearing FROM "reviews" WHERE "reviews"."price" = ? AND "reviews"."cuisine" = ? AND (reviews.latitude BETWEEN -34.1442792662217 AND -33.565352133778305 AND reviews.longitude BETWEEN 150.8678923811065 AND 151.56501541889352) ORDER BY distance ASC[0m  [["price", "Pricey"], ["cuisine", "Fusion"]]
+  Rendered reviews/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 1340ms (Views: 23.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-22 14:50:28 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 54ms (Views: 48.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-23 22:10:50 +1100
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (99.9ms)
+Completed 200 OK in 320ms (Views: 298.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-23 22:39:36 +1100
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  Rendered reviews/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 30ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Applications/MAMP/htdocs/superhi-bien/app/views/reviews/index.html.erb:10: syntax error, unexpected ','
+isine, location: @location), , active: { price: "Reasonable"
+                              ^
+/Applications/MAMP/htdocs/superhi-bien/app/views/reviews/index.html.erb:17: syntax error, unexpected tLABEL, expecting ')'
+, location: @location) active: { cuisine: "Comfort"} );@outp
+                              ^
+/Applications/MAMP/htdocs/superhi-bien/app/views/reviews/index.html.erb:18: syntax error, unexpected tLABEL, expecting ')'
+, location: @location) active: { cuisine: "Fusion"} );@outpu
+                              ^):
+  
+app/views/reviews/index.html.erb:10: syntax error, unexpected ','
+app/views/reviews/index.html.erb:17: syntax error, unexpected tLABEL, expecting ')'
+app/views/reviews/index.html.erb:18: syntax error, unexpected tLABEL, expecting ')'
+Started GET "/" for 127.0.0.1 at 2018-12-23 22:39:58 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (107.3ms)
+Completed 200 OK in 373ms (Views: 367.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/?price=Reasonable" for 127.0.0.1 at 2018-12-23 22:40:17 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"price"=>"Reasonable"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ?[0m  [["price", "Reasonable"]]
+  Rendered reviews/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 47ms (Views: 42.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?price=Cheap" for 127.0.0.1 at 2018-12-23 22:40:18 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"price"=>"Cheap"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ?[0m  [["price", "Cheap"]]
+  Rendered reviews/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 38ms (Views: 34.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?cuisine=American&price=Cheap" for 127.0.0.1 at 2018-12-23 22:40:19 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"American", "price"=>"Cheap"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ? AND "reviews"."cuisine" = ?[0m  [["price", "Cheap"], ["cuisine", "American"]]
+  Rendered reviews/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 42ms (Views: 36.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/?cuisine=American&price=Pricey" for 127.0.0.1 at 2018-12-23 22:40:21 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"American", "price"=>"Pricey"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ? AND "reviews"."cuisine" = ?[0m  [["price", "Pricey"], ["cuisine", "American"]]
+  Rendered reviews/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 44ms (Views: 39.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?cuisine=American&price=Pricey" for 127.0.0.1 at 2018-12-23 22:40:22 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"American", "price"=>"Pricey"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ? AND "reviews"."cuisine" = ?[0m  [["price", "Pricey"], ["cuisine", "American"]]
+  Rendered reviews/index.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 42ms (Views: 37.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?cuisine=American&price=Pricey" for 127.0.0.1 at 2018-12-23 22:40:24 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"American", "price"=>"Pricey"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ? AND "reviews"."cuisine" = ?[0m  [["price", "Pricey"], ["cuisine", "American"]]
+  Rendered reviews/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 48ms (Views: 42.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?cuisine=American&price=Pricey" for 127.0.0.1 at 2018-12-23 22:40:25 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"cuisine"=>"American", "price"=>"Pricey"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ? AND "reviews"."cuisine" = ?[0m  [["price", "Pricey"], ["cuisine", "American"]]
+  Rendered reviews/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 44ms (Views: 39.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-23 22:40:25 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 49ms (Views: 43.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?price=Pricey" for 127.0.0.1 at 2018-12-23 22:40:26 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"price"=>"Pricey"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ?[0m  [["price", "Pricey"]]
+  Rendered reviews/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 46ms (Views: 41.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/?price=Pricey" for 127.0.0.1 at 2018-12-23 22:42:42 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"price"=>"Pricey"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."price" = ? LIMIT ?[0m  [["price", "Pricey"], ["LIMIT", 11]]
+  [1m[36mCACHE Review Load (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."price" = ? LIMIT ?[0m  [["price", "Pricey"], ["LIMIT", 11]]
+  [1m[36mCACHE Review Load (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."price" = ? LIMIT ?[0m  [["price", "Pricey"], ["LIMIT", 11]]
+  [1m[36mCACHE Review Load (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."price" = ? LIMIT ?[0m  [["price", "Pricey"], ["LIMIT", 11]]
+  [1m[36mCACHE Review Load (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."price" = ? LIMIT ?[0m  [["price", "Pricey"], ["LIMIT", 11]]
+  [1m[36mCACHE Review Load (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."price" = ? LIMIT ?[0m  [["price", "Pricey"], ["LIMIT", 11]]
+  [1m[36mCACHE Review Load (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."price" = ? LIMIT ?[0m  [["price", "Pricey"], ["LIMIT", 11]]
+  [1m[36mCACHE Review Load (0.0ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."price" = ? LIMIT ?[0m  [["price", "Pricey"], ["LIMIT", 11]]
+  Rendered reviews/index.html.erb within layouts/application (192.2ms)
+Completed 500 Internal Server Error in 205ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `nill' for #<#<Class:0x007fb490baa418>:0x007fb498942ce0>
+Did you mean?  nil?):
+    2: 
+    3: <!-- adding links that matches price based on query params (controller) -->
+    4: <nav class="filters">
+    5:   <%= active_link_to "All Restaurants", root_path, active: { price: nill, cuisine: nill, location: nill} %>
+    6: 
+    7:   <div class="">
+    8:     <!-- will loop through and filter both queries. @cuisine refers from the controller defined in the code -->
+  
+app/views/reviews/index.html.erb:5:in `_app_views_reviews_index_html_erb___3598547543806273843_70206815345620'
+Started GET "/?price=Pricey" for 127.0.0.1 at 2018-12-23 22:43:03 +1100
+Processing by ReviewsController#index as HTML
+  Parameters: {"price"=>"Pricey"}
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."price" = ?[0m  [["price", "Pricey"]]
+  Rendered reviews/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 35ms (Views: 29.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-23 22:43:09 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 42ms (Views: 38.1ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateComments (20181223121103)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "comments" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "body" text, "review_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, CONSTRAINT "fk_rails_5350d1b47c"
+FOREIGN KEY ("review_id")
+  REFERENCES "reviews" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_review_id" ON "comments" ("review_id")[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20181223121103"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_review_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_review_id' AND type='index'
+[0m
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2018-12-24 10:45:45 +1100
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Applications/MAMP/htdocs/superhi-bien/app/models/review.rb:3: syntax error, unexpected ':', expecting keyword_end
+  has_many : comments
+            ^):
+  
+app/models/review.rb:3: syntax error, unexpected ':', expecting keyword_end
+app/controllers/reviews_controller.rb:63:in `show'
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2018-12-24 10:45:47 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Applications/MAMP/htdocs/superhi-bien/app/models/review.rb:3: syntax error, unexpected ':', expecting keyword_end
+  has_many : comments
+            ^):
+  
+app/models/review.rb:3: syntax error, unexpected ':', expecting keyword_end
+app/controllers/reviews_controller.rb:63:in `show'
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2018-12-24 10:46:28 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (161.3ms)
+Completed 500 Internal Server Error in 203ms (ActiveRecord: 1.9ms)
+
+
+  
+ActionView::Template::Error (undefined method `submit' for #<Comment:0x007fc47bcd38f8>):
+    53: <%= simple_form_for [@review, Comment.new] do |f| %>
+    54:   <!-- This is where the form goes -->
+    55:   <%= f.input :body %>
+    56:   <%= f.input :submit %>
+    57: 
+    58: <% end %>
+  
+app/views/reviews/show.html.erb:56:in `block in _app_views_reviews_show_html_erb___4203888595248103061_70240965364840'
+app/views/reviews/show.html.erb:53:in `_app_views_reviews_show_html_erb___4203888595248103061_70240965364840'
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2018-12-24 10:47:20 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 303ms (Views: 300.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2018-12-24 10:51:20 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 30ms (Views: 26.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2018-12-24 11:14:51 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 67ms (Views: 39.9ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/reviews/6-cheap-and-fast/comments" for 127.0.0.1 at 2018-12-24 11:15:11 +1100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T3GSo6/D5djVz9J7Sa9kKft8HbVThAX4TiHSrbjUXAtyHH32eARyYwZgPL6p4rFCJobpuC1z3jKhZvC7mcCcow==", "comment"=>{"body"=>"I agree, good food"}, "commit"=>"Add comment", "review_id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "comments" ("body", "review_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "I agree, good food"], ["review_id", 6], ["created_at", "2018-12-24 00:15:11.848892"], ["updated_at", "2018-12-24 00:15:11.848892"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/reviews/6-cheap-and-fast
+Completed 302 Found in 24ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2018-12-24 11:15:11 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  Rendered reviews/show.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 27ms (Views: 24.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2018-12-24 11:32:38 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 6]]
+  Rendered reviews/show.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 33ms (Views: 30.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2018-12-24 11:32:59 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 6]]
+  Rendered reviews/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 34ms (Views: 29.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2018-12-24 11:36:04 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 6]]
+  Rendered reviews/show.html.erb within layouts/application (7.8ms)
+Completed 200 OK in 37ms (Views: 32.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/reviews/6-cheap-and-fast/comments" for 127.0.0.1 at 2018-12-24 11:36:16 +1100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G8PaKCwqXKJRzyzzQECaK4mdarijNWKUOp4ievlGmXAmrjV9++3LGYJgwjagDU9AVGeetd3CuV7V2QBs2FJZ2A==", "comment"=>{"body"=>"Another bad review"}, "commit"=>"Add comment", "review_id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "comments" ("body", "review_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Another bad review"], ["review_id", 6], ["created_at", "2018-12-24 00:36:16.866400"], ["updated_at", "2018-12-24 00:36:16.866400"]]
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/reviews/6-cheap-and-fast
+Completed 302 Found in 21ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2018-12-24 11:36:16 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 6]]
+  Rendered reviews/show.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 34ms (Views: 29.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2018-12-24 11:42:09 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 6]]
+  Rendered reviews/show.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 73ms (Views: 69.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2018-12-24 12:16:50 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 6]]
+  Rendered reviews/show.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 42ms (Views: 37.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-24 12:16:55 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 6]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 7]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 8]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 9]]
+  Rendered reviews/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 53ms (Views: 45.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/reviews/7-yummy-in-your-belly" for 127.0.0.1 at 2018-12-24 12:17:01 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"7-yummy-in-your-belly"}
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 7]]
+  Rendered reviews/show.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 60ms (Views: 55.0ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/reviews/7-yummy-in-your-belly/comments" for 127.0.0.1 at 2018-12-24 12:17:07 +1100
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3z7bv3BwbL+8LP5O0J+FrX176LZlcTuM4HGxfDYAN+CTSAArXN4+E0WnE1q2HQB9pys3KA2F611fn0kqA/n0aw==", "comment"=>{"body"=>"Yum!"}, "commit"=>"Add comment", "review_id"=>"7-yummy-in-your-belly"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "comments" ("body", "review_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["body", "Yum!"], ["review_id", 7], ["created_at", "2018-12-24 01:17:07.335992"], ["updated_at", "2018-12-24 01:17:07.335992"]]
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/reviews/7-yummy-in-your-belly
+Completed 302 Found in 8ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/reviews/7-yummy-in-your-belly" for 127.0.0.1 at 2018-12-24 12:17:07 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"7-yummy-in-your-belly"}
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 7]]
+  Rendered reviews/show.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 43ms (Views: 36.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-24 12:17:08 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 6]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 7]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 8]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 9]]
+  Rendered reviews/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 53ms (Views: 47.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-12-24 13:19:50 +1100
+Processing by ReviewsController#index as HTML
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 6]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 7]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 8]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 9]]
+  Rendered reviews/index.html.erb within layouts/application (11.3ms)
+Completed 200 OK in 55ms (Views: 49.9ms | ActiveRecord: 1.2ms)
+
+

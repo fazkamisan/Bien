@@ -8,6 +8,8 @@ class ReviewsController < ApplicationController
     @price = params[:price]
     #creating a filter variable for cuisine
     @cuisine = params[:cuisine]
+    # adding location filter using geocoder
+    @location = params[:location]
 
     #filtering properly by get all the reviews "Review" model from the database
     #creating new review variable as ruby list[]
@@ -25,6 +27,12 @@ class ReviewsController < ApplicationController
     if @cuisine.present?
       @reviews = @reviews.where(cuisine: @cuisine)
     end
+    #search near the location
+    if @location.present?
+      # .near is what geo lcation given to us - see docs
+      @reviews = @reviews.near(@location)
+    end
+
   end
   #adding new function to define new review page
   def new
@@ -88,7 +96,7 @@ class ReviewsController < ApplicationController
 
   # creating a new function that will hold templated function
   def form_params
-    params.require(:review).permit(:title, :restaurant, :body, :score, :ambiance, :cuisine, :price)
+    params.require(:review).permit(:title, :restaurant, :body, :score, :ambiance, :cuisine, :price, :address)
   end
 
 end

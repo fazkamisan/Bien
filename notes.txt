@@ -286,3 +286,368 @@ How to add filter params
           <%= link_to "$$$", root_path(price: 3) %>
         </nav>
       ```
+    - Be sure to change the type of input field on the _form.html.erb to radio button for effective use. NOTE did a db migration where we change "price" from an interger to a number - slightly different than this tuts.
+      ```
+      <!-- adding links that matches price based on query params (controller) -->
+      <nav class="filters">
+        <%= link_to "All Restaurant", root_path %>
+        <%= link_to "Cheap", root_path(price: "Cheap") %>
+        <%= link_to "Reasonable", root_path(price: "Reasonable") %>
+        <%= link_to "Pricey", root_path(price: "Pricey") %>
+
+        <%= link_to "American", root_path(cuisine: "American") %>
+        <%= link_to "Comfort", root_path(cuisine: "Comfort") %>
+        <%= link_to "Fusion", root_path(cuisine: "Fusion") %>
+      </nav>
+      ```
+    - radio button ruby helper in _form.html.erb
+      ```
+        <p>
+          <%= f.label :price %>
+          <%= f.radio_button :price, "Cheap" %> Cheap<br />
+          <%= f.radio_button :price, "Reasonable" %> Reasonable<br />
+          <%= f.radio_button :price, "Pricey" %> Pricey<br />
+        </p>
+      ```
+    - To merge the two filter together, we can just add another param like so
+      ```
+        ...
+          <!-- will loop through and filter both queries. @cuisine refers from the controller defined in the code -->
+          <%= link_to "Cheap", root_path(price: "Cheap", cuisine: @cuisine) %>
+        ...
+          <!--will loop through and filter both queries. @price refers from the controller defined in the code -->
+          <%= link_to "American", root_path(cuisine: "American", price:@price) %>
+      ```
+
+--------------------------------------------------------------------------------
+
+Adding geolocation using the geocoder gem
+  - We can install 3rd party  gems, as we're using rails/bundler we add this to our gemfile
+    ```
+      #add in our geocoding
+      gem 'geocoder'
+    ```
+  - and run the following command prompt
+    ```
+      bundle install
+    ```
+  - Do database migration with the following attributes and then add these to our model
+    ```
+      rails generate migration add_location_to_reviews
+    ```
+  - inside of the new migration file, add in the following
+    ```
+      def change
+        add_column :reviews, :address, :text
+        add_column :reviews, :latitude, :float
+        add_column :reviews, :longitude, :float
+      end
+    ```
+  - So it will like as follow:
+    add_column :[name of table], :[name of field], :[type of field]
+
+  - once done, run ```rails db:migrate```
+  - Now we need update our model 'app/models/review.rb'
+    ```
+      #from geocoder gems
+      geocoded_by :address
+      after_validation :geocode
+    ```
+  - now part of it to validate if address is entered
+    ```
+      ...
+        #adding validation for our address, part of geocoder
+        validates :address, presence: true
+      ...
+    ```
+
+  - inside our 'app/views/reviews/_form.html.erb' we now need to add our fields
+    ```
+      <p>
+        <%= f.label :address %>
+        <%= f.text_field :address %>
+      </p>
+    ```
+  - We now need to add it as part of our controller as well (at the bottom)
+    ```
+      # creating a new function that will hold templated function
+      def form_params
+        params.require(:review).permit(:title, :restaurant, :body, :score, :ambiance, :cuisine, :price, :address)
+      end
+    ```
+
+--------------------------------------------------------------------------------
+
+Filtering by location
+
+  - using geocoder gem, we will ad the filter in our query params (similar to the cuisine and price filters).
+
+  - inside 'app/controllers/reviews_controller.rb' add the following (at the top of def index..)
+    ```
+      ...
+        # adding location filter using geocoder
+        @location = params[:location]
+      ...
+
+    ```
+    - after cuisine function add the following
+      ```
+      ...
+        #search near the location
+        if @location.present?
+          # .near is what geo location given to us - see docs
+          @reviews = @reviews.near(@location)
+        end
+        ...
+      ```
+
+    - full code below
+      ```
+        # def is function in ruby. Telling that the index page coming from app/views/reviews/index.html.erb
+        def index
+          # this is our list page for our review
+          # variable is @.
+          # creating a filter variable for price
+          @price = params[:price]
+          #creating a filter variable for cuisine
+          @cuisine = params[:cuisine]
+          # adding location filter using geocoder
+          @location = params[:location]
+
+          #filtering properly by get all the reviews "Review" model from the database
+          #creating new review variable as ruby list[]
+          #@reviews = ["The Smile", "Baby Bo's", "Chipotle", "nandos"]
+          @reviews = Review.all
+
+          # filtering by price. this will toggle on/off depend when it has filter
+          if @price.present?
+            #take all of the review we have and replace the original review with filtered ones
+            # find the value of the price in db that matches the param above
+            @reviews = @reviews.where(price: @price)
+          end
+
+          #filter by cuisine
+          if @cuisine.present?
+            @reviews = @reviews.where(cuisine: @cuisine)
+          end
+          #search near the location
+          if @location.present?
+            # .near is what geo lcation given to us - see docs
+            @reviews = @reviews.near(@location)
+          end
+
+        end
+      ```
+
+
+--------------------------------------------------------------------------------
+
+Adding a search location form
+
+  - Submit search query by add in our own form without ruby helper, inside 'app/views/reviews/index.html.erb'
+      ```
+        <!-- search location -->
+        <form action="/">
+          <input type="text" name="location" placeholder="search location...." value="<%= @location %>">
+          <!-- adding some hidden fields for cuisine and price filtering -->
+          <input type="hidden" name="price" value="<%= @price %>">
+          <input type="hidden" name="cuisine" value="<%= @cuisine %>">
+        </form>
+      ```
+    - we now need to slightly update our two additional filter to add the location params
+        ```
+        ...
+          <!-- will loop through and filter both queries. @cuisine refers from the controller defined in the code -->
+          <%= link_to "Cheap", root_path(price: "Cheap", cuisine:@cuisine, location: @location) %>
+        ...
+        ```
+        ```
+        ...
+          <!--will loop through and filter both queries. @price refers from the controller defined in the code -->
+          <%= link_to "American", root_path(cuisine: "American", price:@price, location: @location) ) %>
+        ...
+        ```
+
+--------------------------------------------------------------------------------
+
+Making our forms simple using simple_form
+
+  - simple_form is a ruby gem that is easy to create ruby form: https://github.com/plataformatec/simple_form
+
+  - Inside gemfile add the following
+      ```
+        gem 'simple_form'
+      ```
+  - run the command
+      ```
+        bundle install
+      ```
+  - run the generator
+    ```
+      rails generate simple_form:install
+    ```
+  - We can now use simple form in our app 'app/views/reviews/_form.html.erb'. We can now reduce the code, replace with the following
+    ```
+      <%= simple_form_for @review do |f| %>
+        <%= f.input :title %>
+        <%= f.input :restaurant %>
+        <%= f.input :address %>
+        <%= f.input :body %>
+        <%= f.input :cuisine %>
+        <%= f.input :ambiance %>
+        <%= f.input :score %>
+        <%= f.radio_button :price, "Cheap" %> Cheap<br />
+        <%= f.radio_button :price, "Reasonable" %> Reasonable<br />
+        <%= f.radio_button :price, "Pricey" %> Pricey<br />
+
+        <%= f.button :submit %>
+      <% end %>
+    ```
+    NOTE: old reference using ruby ifs
+    ```
+      <!-- using rails method of validation
+      <% if @review.errors.any? %>
+        <div class="errors">
+          <% @review.errors.full_messages.each do |message| %>
+            <p>
+              <%= message %>
+            </p>
+          <% end %>
+        </div>
+      <% end %>
+      <!-- using rails method of validation -->
+    ```
+
+--------------------------------------------------------------------------------
+
+Highlighting our links with active_link_to
+  - Using 'active_link_to' gem to help improve ux when user click on links
+  - Otherwise, we'll have to use alot of ifs statement
+      ```
+        gem 'active_link_to'
+      ```
+  - and run ``` bundle install```
+
+  - make sure you'll have added css class first
+
+  - then inside filter 'app/views/reviews/index.html.erb' change all 'link_to' => 'active_link_to'
+      ```
+        <%= active_link_to ... %>
+      ```
+  - We'll now need to add some filter as all of our link on the current page.
+      ```
+        ... , active: { price: "Cheap"} %>
+      ```
+
+  - for "all restaurant" we need to tweak this since we're always on the root_path, so add additional filter so that it will not highlights all the time only when the following params are nil
+    ```
+      <%= active_link_to "All Restaurants", root_path, active: { price: nil, cuisine: nil, location: nil} %>
+    ```
+
+--------------------------------------------------------------------------------
+
+Adding the Comment model
+
+  - Creating a comment feature, this will a new model which has one-to-many relationship. i.e One review with many comments
+
+  - in the command, run the following
+    ```
+      rails generate model Comment body:text review:belongs_to
+    ```
+  - Remember model will always be singular and capital at the begining. ``` rails generate [name of model] [name of columnn: type of data] [relationship to which model:belong_to]
+
+  - It will now add all all of the comments and also the code for the model
+
+  - Once we've checked the details in 'db/migrate' we can run `rails db:migrate`
+
+  - The next thing we'll do is to connect both models 'app/models/comment.rb' & 'app/models/review.rb'
+
+  - Inside 'app/models/review.rb' is let it know it has potential multiple comments (top of the page)
+      ```
+        # add an association that has 1-to-many relationship
+        has_many :comments
+      ```
+  - we'll now go 'app/models/comment.rb' and add one extra line (validation)
+      ```
+        # adding validation for the body no empty comments
+        validates :body, presence: true
+      ```
+
+--------------------------------------------------------------------------------
+
+Creating a comments controller
+
+  - Create a comment controller where user can add comments, we generate a new controller
+      ```
+        rails generate controller comments
+      ```
+  - remember the name will be plurals with no caps ``` rails generate [name of controller]
+  - The next thing we're going to fix is url for the comment to be added. Inside 'config/routes.rb'
+      ```
+        resources :reviews do
+          # tie comments as part of reviews
+          resources :comments
+        end
+      ```
+  - the next thing we'll do add a comment form inside reviews "views" 'app/views/reviews/show.html.erb'
+      ```
+        <h3>Add a comment</h3>
+        <!--This is how we tie comments inside review [(take from @variable), (make latest from Model)] -->
+        <%= simple_form_for [@review, Comment.new] do |f| %>
+          <!-- This is where the form goes -->
+          <%= f.input :body %>
+          <%= f.button :submit, "Add comment" %>
+        <% end %>
+      ```
+  - Next, we'll need to add 'create' action to the commentController in 'app/controllers/comments_controller.rb'
+      ```
+        #take the body that we pass through and find the review
+        def create
+          # find the review based on resources set in config/routes.rb
+          @review = Review.find(params[:review_id])
+          #make a brand new comments using form params and only take the body based on @review
+          @comment = @review.comments.new(params.require(:comment).permit(:body))
+          #save the new comment
+          @comment.save
+          # redirect back show page
+          redirect_to review_path(@review)
+        end
+      ```
+--------------------------------------------------------------------------------
+
+Letting our users comment on reviews
+  - inside 'app/views/reviews/show.html.erb' we can show added comments as follow
+      ```
+        <h3>Comments</h3>
+        <!-- loop through each comments by descending order |[name of action]| -->
+        <% @review.comments.order("created_at desc").each do |comment| %>
+          <div class="comment">
+            <!-- simple_format is ruby helper -->
+            <%= simple_format comment.body %>
+            <!-- another ruby helper time_ago_in_words -->
+            <p class="posted"> Posted at <%= time_ago_in_words comment.created_at %> ago</p>
+          </div>
+        <% end %>
+      ```
+
+--------------------------------------------------------------------------------
+
+
+Displaying how many comments in each reviews
+  - inside 'app/views/reviews/index.html.erb' inside the loop, update the code to the following
+      ```
+        <!-- ruby for loop. within this area, repeat each @reviews items -->
+        <% @reviews.each do |review| %>
+          <div class="review">
+            <!-- linking to corresponding reviews -->
+            <%= link_to review_path(review) do %>
+              <!-- grabbing the following inside each loop -->
+              <h2><%= review.title %></h2>
+              <p>
+                <!-- ruby helper pluralize -->
+                <%= review.cuisine %> - <%= pluralize review.comments.count, "comment" %>
+              </p>
+            <% end %>
+          </div>
+        <% end%>
+      ```

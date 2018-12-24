@@ -2,19 +2,42 @@
 
 <!-- adding links that matches price based on query params (controller) -->
 <nav class="filters">
-  <%= link_to "All prices", root_path %>
-  <%= link_to "$", root_path(price: 1) %>
-  <%= link_to "$$", root_path(price: 2) %>
-  <%= link_to "$$$", root_path(price: 3) %>
+  <%= active_link_to "All Restaurants", root_path, active: { price: nil, cuisine: nil, location: nil} %>
 
-  <%= link_to "Mexican", root_path(cuisine: "Mexican") %>
+  <div class="">
+    <!-- will loop through and filter both queries. @cuisine refers from the controller defined in the code -->
+    <%= active_link_to "Cheap", root_path(price: "Cheap", cuisine:@cuisine, location: @location), active: { price: "Cheap"} %>
+    <%= active_link_to "Reasonable", root_path(price: "Reasonable", cuisine: @cuisine, location: @location), active: { price: "Reasonable"} %>
+    <%= link_to "Pricey", root_path(price: "Pricey", cuisine: @cuisine, location: @location), active: { price: "Pricey"} %>
+  </div>
+
+  <div class="">
+    <!--will loop through and filter both queries. @price refers from the controller defined in the code -->
+    <%= active_link_to "American", root_path(cuisine: "American", price:@price, location: @location), active: { cuisine: "American"}  %>
+    <%= active_link_to "Comfort", root_path(cuisine: "Comfort", price:@price, location: @location), active: { cuisine: "Comfort"} %>
+    <%= active_link_to "Fusion", root_path(cuisine: "Fusion", price:@price, location: @location), active: { cuisine: "Fusion"} %>
+  </div>
+  <!-- search location -->
+  <form action="/">
+    <input type="text" name="location" placeholder="search location...." value="<%= @location %>">
+    <!-- adding some hidden fields for cuisine and price filtering -->
+    <input type="hidden" name="price" value="<%= @price %>">
+    <input type="hidden" name="cuisine" value="<%= @cuisine %>">
+  </form>
 </nav>
 
 
 <!-- ruby for loop. within this area, repeat each @reviews items -->
 <% @reviews.each do |review| %>
   <div class="review">
-    <!-- grabbing the review title from model, and linking to corresponding reviews -->
-    <%= link_to review.title, review_path(review) %>
+    <!-- linking to corresponding reviews -->
+    <%= link_to review_path(review) do %>
+      <!-- grabbing the following inside each loop -->
+      <h2><%= review.title %></h2>
+      <p>
+        <!-- ruby helper pluralize -->
+        <%= review.cuisine %> - <%= pluralize review.comments.count, "comment" %>
+      </p>
+    <% end %>
   </div>
 <% end%>
