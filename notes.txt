@@ -632,7 +632,6 @@ Letting our users comment on reviews
 
 --------------------------------------------------------------------------------
 
-
 Displaying how many comments in each reviews
   - inside 'app/views/reviews/index.html.erb' inside the loop, update the code to the following
       ```
@@ -651,3 +650,31 @@ Displaying how many comments in each reviews
           </div>
         <% end%>
       ```
+      ```
+
+--------------------------------------------------------------------------------
+
+Deploying our site using Heroku
+
+- sign up for heroku (personal) account.
+- make sure that heroku cli is installed as well as posgrestsql
+- make sure you ``` heroku login ```
+- once in, we need to swap our sqlite3 => postgrest. so we will update gemfile where we set sqlite3 for dev, posgrest for production 'Gemfile'
+    ```
+      # Use sqlite3 as the database for Active Record - only do sqlite3 in development mode
+      group :development do
+        gem 'sqlite3'
+      end
+      # when in production mode - we use posgrestsql for heroku
+      group :production do
+        gem 'pg'
+      end
+    ```
+- run ``` bundle install ```
+
+- Next, we need to specify heroku which version of ruby in app. check ``` ruby -v```  once command provide the reply, add it in gemfile
+  ```
+    # heroku which version of ruby
+     ruby '2.4.1'
+  ```
+- since we will deploy on heroku via git, make sure we commit any changes on project/branch
