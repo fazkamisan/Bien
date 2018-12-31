@@ -18,8 +18,19 @@
         </h1>
       </nav>
       <nav>
-        <!-- rails built-in helpers to link within site -->
-        <%= link_to "Add a review", new_review_path %>
+        <!-- if statement to see if user has session -->
+        <% if is_logged_in? %>
+          <!-- user identification via "session" -->
+          <%= @current_user.username %>
+          <!-- rails built-in helpers to link within site -->
+          <%= link_to "Add a review", new_review_path %>
+          <!-- remove session with method "delet" -->
+          <%= link_to "Log out", session_path, method: :delete  %>
+        <% else %>
+          <!-- if not signed up/login show the links -->
+          <%= link_to "Sign up", new_user_path %>
+          <%= link_to "Log in", new_session_path %>
+        <% end %>
       </nav>
     </header>
 

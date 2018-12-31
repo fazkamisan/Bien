@@ -35,7 +35,7 @@ gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 #add in our geocoding
 gem 'geocoder'
@@ -45,6 +45,9 @@ gem 'simple_form'
 
 #adding active form helper
 gem 'active_link_to'
+
+# adding profanity filter
+gem "profanity_filter"
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

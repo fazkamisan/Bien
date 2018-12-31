@@ -1,5 +1,8 @@
 class ReviewsController < ApplicationController
 
+  # check if logged in from application_controller function. we can also add exceptions after commas exept[(:action), :action)]
+  before_action :login_status, except: [:index, :show]
+
   # def is function in ruby. Telling that the index page coming from app/views/reviews/index.html.erb
   def index
     # this is our list page for our review
@@ -47,6 +50,9 @@ class ReviewsController < ApplicationController
   # the ":[field]" denotes variable symbols that don't change
   @review = Review.new(form_params)
 
+  # and then associate it with a user
+  @review.user = @current_user
+
   # we can to check if the model can be saved, if it is, we're go to home page again, if it isn't show the form
   if @review.save
     redirect_to root_path
@@ -67,8 +73,12 @@ class ReviewsController < ApplicationController
   def destroy
     #find the individual review
     @review = Review.find(params[:id])
-    #destroy it
-    @review.destroy
+    # check if user is current poster
+    if @review.user == @current_user
+      #destroy it
+        @review.destroy
+    end
+
     #redirect to the homepage
     redirect_to root_path
   end
@@ -77,21 +87,32 @@ class ReviewsController < ApplicationController
   def edit
     #find the individual review to edit
     @review = Review.find(params[:id])
+    # make sure non posted user can edit without the url (!= is not)
+    if @review. user != @current_user
+      # take it back to homepage
+      redirect_to root_path
+    end
   end
 
   # adding new function to update the editted review
   def update
     #find the individual review
     @review = Review.find(params[:id])
-    #update the new info from the form - update with new info from the form
-    if @review.update(form_params)
-      #redirect to individual show page
-      redirect_to review_path(@review)
-    else
-      # using this it will render any validation to the main edit page
-      render "edit"
-    end
 
+    #check to see if you're the poster
+    if @review.user != @current_user
+      #take it back to homepage
+      redirect_to root_path
+    else
+      #update the new info from the form - update with new info from the form
+      if @review.update(form_params)
+        #redirect to individual show page
+        redirect_to review_path(@review)
+      else
+        # using this it will render any validation to the main edit page
+        render "edit"
+      end
+    end
   end
 
   # creating a new function that will hold templated function

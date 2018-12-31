@@ -1,0 +1,8 @@
+<h2>All users</h2>
+<!-- loop all all users -->
+<% @users.each do |user| %>
+  <p>
+    <%= user.username %> (<%= user.email %>)
+  </p>
+
+<% end %>

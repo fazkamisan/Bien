@@ -5,6 +5,10 @@ class CommentsController < ApplicationController
     @review = Review.find(params[:review_id])
     #make a brand new comments using form params and only take the body based on @review
     @comment = @review.comments.new(params.require(:comment).permit(:body))
+
+    #before we save the comment
+    @comment.user = @current_user
+
     #save the new comment
     @comment.save
     # redirect back show page

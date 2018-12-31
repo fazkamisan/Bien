@@ -1,0 +1,8 @@
+<h2>log in to Bien Reviews</h2>
+<!-- this is a placeholder for session so URL will be use in the POST method-->
+<%= simple_form_for :session, url: session_path do |f| %>
+  <%= f.input :username %>
+  <%= f.input :password %>
+
+  <%= f.button :submit, "log in" %>
+<% end %>
