@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
       #save to a variable
       @current_user = User.find(session[:user_id]);
     else
-      @current_user = nill
+      @current_user = nil
     end
   end
 
