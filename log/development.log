@@ -5932,3 +5932,1209 @@ Processing by ReviewsController#show as HTML
 Completed 200 OK in 54ms (Views: 46.5ms | ActiveRecord: 1.2ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-01-02 21:11:59 +1100
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReviewsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 6]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 7]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 8]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 9]]
+  Rendered reviews/index.html.erb within layouts/application (137.4ms)
+Completed 200 OK in 420ms (Views: 346.0ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/readme.md" for 127.0.0.1 at 2019-01-02 21:16:32 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/readme.md"):
+  
+actionpack (5.1.6.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.1) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-01-02 21:32:19 +1100
+Processing by ReviewsController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 6]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 7]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 8]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 9]]
+  Rendered reviews/index.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 48ms (Views: 40.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/reviews/9-the-best-halal-place" for 127.0.0.1 at 2019-01-02 21:32:21 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"9-the-best-halal-place"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mBookmark Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "bookmarks" WHERE "bookmarks"."review_id" = ? AND "bookmarks"."user_id" = 1 LIMIT ?[0m  [["review_id", 9], ["LIMIT", 1]]
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."review_id" = ?[0m  [["review_id", 9]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 9]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered reviews/show.html.erb within layouts/application (112.1ms)
+Completed 200 OK in 154ms (Views: 144.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2019-01-02 21:32:43 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mBookmark Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "bookmarks" WHERE "bookmarks"."review_id" = ? AND "bookmarks"."user_id" = 1 LIMIT ?[0m  [["review_id", 6], ["LIMIT", 1]]
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."review_id" = ?[0m  [["review_id", 6]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 6]]
+  Rendered reviews/show.html.erb within layouts/application (30.6ms)
+Completed 200 OK in 85ms (Views: 76.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2019-01-02 21:32:47 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mBookmark Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "bookmarks" WHERE "bookmarks"."review_id" = ? AND "bookmarks"."user_id" = 1 LIMIT ?[0m  [["review_id", 6], ["LIMIT", 1]]
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."review_id" = ?[0m  [["review_id", 6]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 6]]
+  Rendered reviews/show.html.erb within layouts/application (14.6ms)
+Completed 200 OK in 59ms (Views: 54.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2019-01-02 21:32:48 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mBookmark Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "bookmarks" WHERE "bookmarks"."review_id" = ? AND "bookmarks"."user_id" = 1 LIMIT ?[0m  [["review_id", 6], ["LIMIT", 1]]
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."review_id" = ?[0m  [["review_id", 6]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 6]]
+  Rendered reviews/show.html.erb within layouts/application (14.7ms)
+Completed 200 OK in 62ms (Views: 56.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2019-01-02 21:32:49 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mBookmark Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "bookmarks" WHERE "bookmarks"."review_id" = ? AND "bookmarks"."user_id" = 1 LIMIT ?[0m  [["review_id", 6], ["LIMIT", 1]]
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."review_id" = ?[0m  [["review_id", 6]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 6]]
+  Rendered reviews/show.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 75ms (Views: 69.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-02 21:33:20 +1100
+Processing by ReviewsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 6]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 7]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 8]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 9]]
+  Rendered reviews/index.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 72ms (Views: 63.9ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/reviews/7-yummy-in-your-belly" for 127.0.0.1 at 2019-01-02 21:33:22 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"7-yummy-in-your-belly"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mBookmark Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "bookmarks" WHERE "bookmarks"."review_id" = ? AND "bookmarks"."user_id" = 1 LIMIT ?[0m  [["review_id", 7], ["LIMIT", 1]]
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."review_id" = ?[0m  [["review_id", 7]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 7]]
+  Rendered reviews/show.html.erb within layouts/application (18.5ms)
+Completed 200 OK in 69ms (Views: 61.2ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/reviews/new" for 127.0.0.1 at 2019-01-02 21:33:27 +1100
+Processing by ReviewsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (20.3ms)
+  Rendered reviews/new.html.erb within layouts/application (24.5ms)
+Completed 200 OK in 64ms (Views: 56.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-02 21:34:19 +1100
+Processing by ReviewsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 6]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 7]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 8]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 9]]
+  Rendered reviews/index.html.erb within layouts/application (13.9ms)
+Completed 200 OK in 65ms (Views: 58.3ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2019-01-02 21:34:29 +1100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fORY6RFymYPaPCcG0N90+wCfFz4wlZBsNkDsV5BfNyBYHJff3eyjx9xEPAbEwWSN4yUyUcJH0duzhX5SvX+9qA==", "review"=>{"title"=>"Fuz's Review", "restaurant"=>"Test", "address"=>"test test test test", "body"=>"test test test test", "cuisine"=>"Indian", "ambiance"=>"Comfort", "score"=>"", "price"=>"Reasonable"}, "commit"=>"Create Review"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (9.0ms)
+  Rendered reviews/new.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 2097ms (Views: 44.0ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2019-01-02 21:34:38 +1100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZieP+mu+aGfNnVmFstYI7z1NS28+7HFx8xn15z5k+mWyBy7FZqv8M1AuLz8UsyJE7eWambBfarG3c/N54+XByg==", "review"=>{"title"=>"Fuz's Review", "restaurant"=>"Test", "address"=>"test test test test", "body"=>"test test test test", "cuisine"=>"Indian", "ambiance"=>"Comfort", "score"=>"5", "price"=>"Reasonable"}, "commit"=>"Create Review"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "body", "score", "restaurant", "price", "cuisine", "created_at", "updated_at", "ambiance", "address", "latitude", "longitude", "user_id") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Fuz's Review"], ["body", "test test test test"], ["score", 5], ["restaurant", "Test"], ["price", "Reasonable"], ["cuisine", "Indian"], ["created_at", "2019-01-02 10:34:39.562758"], ["updated_at", "2019-01-02 10:34:39.562758"], ["ambiance", "Comfort"], ["address", "test test test test"], ["latitude", 51.1576661], ["longitude", -1.4458572], ["user_id", 1]]
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1521ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-02 21:34:39 +1100
+Processing by ReviewsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 6]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 7]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 8]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 9]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 10]]
+  Rendered reviews/index.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 39ms (Views: 35.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/reviews/10-fuz-s-review" for 127.0.0.1 at 2019-01-02 21:34:41 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"10-fuz-s-review"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mBookmark Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "bookmarks" WHERE "bookmarks"."review_id" = ? AND "bookmarks"."user_id" = 1 LIMIT ?[0m  [["review_id", 10], ["LIMIT", 1]]
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."review_id" = ?[0m  [["review_id", 10]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 10]]
+  Rendered reviews/show.html.erb within layouts/application (15.5ms)
+Completed 200 OK in 57ms (Views: 49.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/reviews/10-fuz-s-review" for 127.0.0.1 at 2019-01-02 21:34:54 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"10-fuz-s-review"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mBookmark Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "bookmarks" WHERE "bookmarks"."review_id" = ? AND "bookmarks"."user_id" = 1 LIMIT ?[0m  [["review_id", 10], ["LIMIT", 1]]
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."review_id" = ?[0m  [["review_id", 10]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 10]]
+  Rendered reviews/show.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 52ms (Views: 45.4ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/reviews/10-fuz-s-review" for 127.0.0.1 at 2019-01-02 21:34:56 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"10-fuz-s-review"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mBookmark Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "bookmarks" WHERE "bookmarks"."review_id" = ? AND "bookmarks"."user_id" = 1 LIMIT ?[0m  [["review_id", 10], ["LIMIT", 1]]
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."review_id" = ?[0m  [["review_id", 10]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 10]]
+  Rendered reviews/show.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 47ms (Views: 42.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/reviews/10-fuz-s-review" for 127.0.0.1 at 2019-01-02 21:34:56 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"10-fuz-s-review"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mBookmark Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "bookmarks" WHERE "bookmarks"."review_id" = ? AND "bookmarks"."user_id" = 1 LIMIT ?[0m  [["review_id", 10], ["LIMIT", 1]]
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."review_id" = ?[0m  [["review_id", 10]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 10]]
+  Rendered reviews/show.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 56ms (Views: 50.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/reviews/10-fuz-s-review" for 127.0.0.1 at 2019-01-02 21:34:57 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"10-fuz-s-review"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mBookmark Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "bookmarks" WHERE "bookmarks"."review_id" = ? AND "bookmarks"."user_id" = 1 LIMIT ?[0m  [["review_id", 10], ["LIMIT", 1]]
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."review_id" = ?[0m  [["review_id", 10]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 10]]
+  Rendered reviews/show.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 49ms (Views: 43.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/reviews/10-fuz-s-review" for 127.0.0.1 at 2019-01-02 21:34:58 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"10-fuz-s-review"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mBookmark Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "bookmarks" WHERE "bookmarks"."review_id" = ? AND "bookmarks"."user_id" = 1 LIMIT ?[0m  [["review_id", 10], ["LIMIT", 1]]
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."review_id" = ?[0m  [["review_id", 10]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 10]]
+  Rendered reviews/show.html.erb within layouts/application (10.3ms)
+Completed 200 OK in 46ms (Views: 41.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/reviews/10-fuz-s-review" for 127.0.0.1 at 2019-01-02 21:34:59 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"10-fuz-s-review"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mBookmark Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "bookmarks" WHERE "bookmarks"."review_id" = ? AND "bookmarks"."user_id" = 1 LIMIT ?[0m  [["review_id", 10], ["LIMIT", 1]]
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."review_id" = ?[0m  [["review_id", 10]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 10]]
+  Rendered reviews/show.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 44ms (Views: 39.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/reviews/10-fuz-s-review" for 127.0.0.1 at 2019-01-02 21:34:59 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"10-fuz-s-review"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mBookmark Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "bookmarks" WHERE "bookmarks"."review_id" = ? AND "bookmarks"."user_id" = 1 LIMIT ?[0m  [["review_id", 10], ["LIMIT", 1]]
+  [1m[36mBookmark Load (0.3ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."review_id" = ?[0m  [["review_id", 10]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 10]]
+  Rendered reviews/show.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 82ms (Views: 74.7ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/reviews/10-fuz-s-review" for 127.0.0.1 at 2019-01-02 21:35:00 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"10-fuz-s-review"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mBookmark Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "bookmarks" WHERE "bookmarks"."review_id" = ? AND "bookmarks"."user_id" = 1 LIMIT ?[0m  [["review_id", 10], ["LIMIT", 1]]
+  [1m[36mBookmark Load (0.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."review_id" = ?[0m  [["review_id", 10]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 10]]
+  Rendered reviews/show.html.erb within layouts/application (11.4ms)
+Completed 200 OK in 63ms (Views: 57.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/reviews/10-fuz-s-review" for 127.0.0.1 at 2019-01-02 21:35:00 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"10-fuz-s-review"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mBookmark Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "bookmarks" WHERE "bookmarks"."review_id" = ? AND "bookmarks"."user_id" = 1 LIMIT ?[0m  [["review_id", 10], ["LIMIT", 1]]
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."review_id" = ?[0m  [["review_id", 10]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 10]]
+  Rendered reviews/show.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 61ms (Views: 54.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/reviews/10-fuz-s-review" for 127.0.0.1 at 2019-01-02 21:35:01 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"10-fuz-s-review"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mBookmark Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "bookmarks" WHERE "bookmarks"."review_id" = ? AND "bookmarks"."user_id" = 1 LIMIT ?[0m  [["review_id", 10], ["LIMIT", 1]]
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."review_id" = ?[0m  [["review_id", 10]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 10]]
+  Rendered reviews/show.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 54ms (Views: 49.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/reviews/10-fuz-s-review" for 127.0.0.1 at 2019-01-02 21:35:02 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"10-fuz-s-review"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mBookmark Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "bookmarks" WHERE "bookmarks"."review_id" = ? AND "bookmarks"."user_id" = 1 LIMIT ?[0m  [["review_id", 10], ["LIMIT", 1]]
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."review_id" = ?[0m  [["review_id", 10]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 10]]
+  Rendered reviews/show.html.erb within layouts/application (12.3ms)
+Completed 200 OK in 49ms (Views: 43.3ms | ActiveRecord: 1.2ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPhotosToReviews (20190102112517)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "reviews" ADD "photo" varchar[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190102112517"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_bookmarks_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_bookmarks_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_bookmarks_on_review_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_bookmarks_on_review_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_comments_on_review_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_comments_on_review_id' AND type='index'
+[0m
+Started GET "/reviews/10-fuz-s-review" for 127.0.0.1 at 2019-01-02 22:49:26 +1100
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"10-fuz-s-review"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mBookmark Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "bookmarks" WHERE "bookmarks"."review_id" = ? AND "bookmarks"."user_id" = 1 LIMIT ?[0m  [["review_id", 10], ["LIMIT", 1]]
+  [1m[36mBookmark Load (0.5ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."review_id" = ?[0m  [["review_id", 10]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 10]]
+  Rendered reviews/show.html.erb within layouts/application (163.8ms)
+Completed 200 OK in 453ms (Views: 353.9ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/reviews/new" for 127.0.0.1 at 2019-01-02 22:49:32 +1100
+Processing by ReviewsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (22.9ms)
+  Rendered reviews/new.html.erb within layouts/application (27.8ms)
+Completed 200 OK in 66ms (Views: 59.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-02 22:56:54 +1100
+Processing by ReviewsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 6]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 7]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 8]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 9]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 10]]
+  Rendered reviews/index.html.erb within layouts/application (49.0ms)
+Completed 200 OK in 107ms (Views: 76.9ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/reviews/10-fuz-s-review" for 127.0.0.1 at 2019-01-02 22:56:57 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"10-fuz-s-review"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mBookmark Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "bookmarks" WHERE "bookmarks"."review_id" = ? AND "bookmarks"."user_id" = 1 LIMIT ?[0m  [["review_id", 10], ["LIMIT", 1]]
+  [1m[36mBookmark Load (0.5ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."review_id" = ?[0m  [["review_id", 10]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 10]]
+  Rendered reviews/show.html.erb within layouts/application (46.1ms)
+Completed 200 OK in 105ms (Views: 95.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/reviews/new" for 127.0.0.1 at 2019-01-02 22:57:01 +1100
+Processing by ReviewsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (31.6ms)
+  Rendered reviews/new.html.erb within layouts/application (35.3ms)
+Completed 200 OK in 105ms (Views: 98.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/reviews/new" for 127.0.0.1 at 2019-01-02 22:58:27 +1100
+Processing by ReviewsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (17.9ms)
+  Rendered reviews/new.html.erb within layouts/application (20.1ms)
+Completed 200 OK in 65ms (Views: 60.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-02 23:00:03 +1100
+Processing by ReviewsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 6]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 7]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 8]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 9]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 10]]
+  Rendered reviews/index.html.erb within layouts/application (17.1ms)
+Completed 200 OK in 91ms (Views: 85.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-02 23:00:16 +1100
+Processing by ReviewsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 6]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 7]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 8]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 9]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 10]]
+  Rendered reviews/index.html.erb within layouts/application (13.6ms)
+Completed 200 OK in 66ms (Views: 60.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2019-01-02 23:00:48 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mBookmark Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "bookmarks" WHERE "bookmarks"."review_id" = ? AND "bookmarks"."user_id" = 1 LIMIT ?[0m  [["review_id", 6], ["LIMIT", 1]]
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."review_id" = ?[0m  [["review_id", 6]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 6]]
+  Rendered reviews/show.html.erb within layouts/application (43.8ms)
+Completed 200 OK in 93ms (Views: 82.6ms | ActiveRecord: 5.6ms)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2019-01-02 23:01:04 +1100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Cx8mSsmG9dz42dF57M5U/iefKHj+HK6gELtJCu60MM3fP4d1xJNhiGVqp8NKq35V9zf5jnCvtWBU0U+UMzULYg==", "review"=>{"title"=>"Fuz's ", "restaurant"=>"", "address"=>"", "photo"=>#<ActionDispatch::Http::UploadedFile:0x007feaea57bb60 @tempfile=#<Tempfile:/var/folders/01/6cljrxn56pl0tt6lxg4m72r00000gp/T/RackMultipart20190102-1989-1cuwgyq.jpeg>, @original_filename="82qFADGz.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"review[photo]\"; filename=\"82qFADGz.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "body"=>"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.", "cuisine"=>"Comfort", "ambiance"=>"Family", "score"=>"6", "price"=>"Reasonable"}, "commit"=>"Create Review"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (10.6ms)
+  Rendered reviews/new.html.erb within layouts/application (14.4ms)
+Completed 200 OK in 55ms (Views: 45.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2019-01-02 23:01:21 +1100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"qZHUZELuypaF8kE0MrmTjyzgqkqErDhsCg8ge3BID3p9sXVbT/tewhhBN46U3Lkk/Eh7vAofI6xOZSblrck01Q==", "review"=>{"title"=>"Fuz's ", "restaurant"=>"Golden Fang", "address"=>"", "photo"=>#<ActionDispatch::Http::UploadedFile:0x007feaeada79d8 @tempfile=#<Tempfile:/var/folders/01/6cljrxn56pl0tt6lxg4m72r00000gp/T/RackMultipart20190102-1989-all5gn.jpeg>, @original_filename="82qFADGz.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"review[photo]\"; filename=\"82qFADGz.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "body"=>"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.", "cuisine"=>"Comfort", "ambiance"=>"Family", "score"=>"6", "price"=>"Reasonable"}, "commit"=>"Create Review"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (13.8ms)
+  Rendered reviews/new.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 54ms (Views: 47.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2019-01-02 23:02:26 +1100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"4G4q43O3Xte3T1KfL8ZM7FX7GHy7IOVHNcJoCRzDSN80TovcfqLKgyr8JCWJo2ZHhVPJijWT/odxqG6XwUJzcA==", "review"=>{"title"=>"Fuz's ", "restaurant"=>"Golden Fang", "address"=>"10A City Rd, Darlington NSW 2008", "photo"=>#<ActionDispatch::Http::UploadedFile:0x007feaed8aa3d8 @tempfile=#<Tempfile:/var/folders/01/6cljrxn56pl0tt6lxg4m72r00000gp/T/RackMultipart20190102-1989-6dtozj.jpeg>, @original_filename="82qFADGz.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"review[photo]\"; filename=\"82qFADGz.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "body"=>"Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.", "cuisine"=>"Comfort", "ambiance"=>"Family", "score"=>"6", "price"=>"Reasonable"}, "commit"=>"Create Review"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "body", "score", "restaurant", "price", "cuisine", "created_at", "updated_at", "ambiance", "address", "latitude", "longitude", "user_id", "photo") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Fuz's "], ["body", "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat."], ["score", 6], ["restaurant", "Golden Fang"], ["price", "Reasonable"], ["cuisine", "Comfort"], ["created_at", "2019-01-02 12:02:28.298569"], ["updated_at", "2019-01-02 12:02:28.298569"], ["ambiance", "Family"], ["address", "10A City Rd, Darlington NSW 2008"], ["latitude", -33.8907508], ["longitude", 151.189079], ["user_id", 1], ["photo", "82qFADGz.jpeg"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 1958ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-02 23:02:28 +1100
+Processing by ReviewsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 6]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 7]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 8]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 9]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 10]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 11]]
+  Rendered reviews/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 47ms (Views: 42.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/reviews/11-fuz-s" for 127.0.0.1 at 2019-01-02 23:02:32 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"11-fuz-s"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mBookmark Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "bookmarks" WHERE "bookmarks"."review_id" = ? AND "bookmarks"."user_id" = 1 LIMIT ?[0m  [["review_id", 11], ["LIMIT", 1]]
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."review_id" = ?[0m  [["review_id", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 11]]
+  Rendered reviews/show.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 64ms (Views: 56.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 21:57:08 +1100
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReviewsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 6]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 7]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 8]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 9]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 10]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 11]]
+  Rendered reviews/index.html.erb within layouts/application (162.2ms)
+Completed 200 OK in 397ms (Views: 346.7ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 22:15:12 +1100
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReviewsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 6]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 7]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 8]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 9]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 10]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 11]]
+  Rendered reviews/index.html.erb within layouts/application (161.2ms)
+Completed 200 OK in 401ms (Views: 349.6ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/reviews/11-fuz-s" for 127.0.0.1 at 2019-01-03 22:15:15 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"11-fuz-s"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mBookmark Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "bookmarks" WHERE "bookmarks"."review_id" = ? AND "bookmarks"."user_id" = 1 LIMIT ?[0m  [["review_id", 11], ["LIMIT", 1]]
+  [1m[36mBookmark Load (0.4ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."review_id" = ?[0m  [["review_id", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 11]]
+  Rendered reviews/show.html.erb within layouts/application (100.1ms)
+Completed 200 OK in 145ms (Views: 132.7ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/reviews/11-fuz-s" for 127.0.0.1 at 2019-01-03 22:19:07 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"11-fuz-s"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mBookmark Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "bookmarks" WHERE "bookmarks"."review_id" = ? AND "bookmarks"."user_id" = 1 LIMIT ?[0m  [["review_id", 11], ["LIMIT", 1]]
+  [1m[36mBookmark Load (0.4ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."review_id" = ?[0m  [["review_id", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 11]]
+  Rendered reviews/show.html.erb within layouts/application (27.6ms)
+Completed 200 OK in 105ms (Views: 61.6ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/uploads/review/photo/11/medium_82qFADGz.jpeg" for 127.0.0.1 at 2019-01-03 22:19:08 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/uploads/review/photo/11/medium_82qFADGz.jpeg"):
+  
+actionpack (5.1.6.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.1) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started DELETE "/reviews/11-fuz-s" for 127.0.0.1 at 2019-01-03 22:19:14 +1100
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"G/mT7PLsNJc0rOoLXYou3KlSL4hk12EPumCsqX9b9mrP2TLT//mgw6kfnLH77wR3efr+fupkes/+Cqo3otrNxQ==", "id"=>"11-fuz-s"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 11]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 13ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 22:19:14 +1100
+Processing by ReviewsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 6]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 7]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 8]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 9]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 10]]
+  Rendered reviews/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 54ms (Views: 49.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/reviews/new" for 127.0.0.1 at 2019-01-03 22:19:17 +1100
+Processing by ReviewsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (24.4ms)
+  Rendered reviews/new.html.erb within layouts/application (35.5ms)
+Completed 200 OK in 77ms (Views: 71.0ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2019-01-03 22:22:57 +1100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YBb1SU14716yqugOf/eP+qpDCp/oHJp5+03GGpAQcNBE7jp/gebVGrTS8w5r6Z+MSfkv8BrO285+iFQfvTD6WA==", "review"=>{"title"=>"Fuz's image with review", "restaurant"=>"Shalom", "address"=>"shop 3/4 /299 Sussex St, Sydney NSW 2000", "photo"=>#<ActionDispatch::Http::UploadedFile:0x007feb59073ab8 @tempfile=#<Tempfile:/var/folders/01/6cljrxn56pl0tt6lxg4m72r00000gp/T/RackMultipart20190103-15186-10lx42v.jpeg>, @original_filename="82qFADGz.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"review[photo]\"; filename=\"82qFADGz.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "body"=>"Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.", "cuisine"=>"Indian", "ambiance"=>"Family", "score"=>"7", "price"=>"Cheap"}, "commit"=>"Create Review"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "body", "score", "restaurant", "price", "cuisine", "created_at", "updated_at", "ambiance", "address", "user_id", "photo") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Fuz's image with review"], ["body", "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis."], ["score", 7], ["restaurant", "Shalom"], ["price", "Cheap"], ["cuisine", "Indian"], ["created_at", "2019-01-03 11:23:00.166215"], ["updated_at", "2019-01-03 11:23:00.166215"], ["ambiance", "Family"], ["address", "shop 3/4 /299 Sussex St, Sydney NSW 2000"], ["user_id", 1], ["photo", "82qFADGz.jpeg"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 2544ms (ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 22:23:00 +1100
+Processing by ReviewsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 6]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 7]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 8]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 9]]
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 10]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 11]]
+  Rendered reviews/index.html.erb within layouts/application (15.6ms)
+Completed 200 OK in 64ms (Views: 58.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/reviews/11-fuz-s-image-with-review" for 127.0.0.1 at 2019-01-03 22:23:02 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"11-fuz-s-image-with-review"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mBookmark Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "bookmarks" WHERE "bookmarks"."review_id" = ? AND "bookmarks"."user_id" = 1 LIMIT ?[0m  [["review_id", 11], ["LIMIT", 1]]
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."review_id" = ?[0m  [["review_id", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 11]]
+  Rendered reviews/show.html.erb within layouts/application (23.6ms)
+Completed 200 OK in 77ms (Views: 68.1ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 22:26:00 +1100
+Processing by ReviewsController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (13.5ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `photo' for nil:NilClass):
+    34:     <%= link_to review_path(review) do %>
+    35:       <!-- grabbing the following inside each loop -->
+    36:       <!-- image photo uploaded -->
+    37:       <%= image_tag @review.photo.thumb %>
+    38:       <h2><%= review.title %></h2>
+    39:       <p>
+    40:         <!-- ruby helper pluralize -->
+  
+app/views/reviews/index.html.erb:37:in `block (2 levels) in _app_views_reviews_index_html_erb__2901678254986033114_70324425711960'
+app/views/reviews/index.html.erb:34:in `block in _app_views_reviews_index_html_erb__2901678254986033114_70324425711960'
+app/views/reviews/index.html.erb:31:in `_app_views_reviews_index_html_erb__2901678254986033114_70324425711960'
+Started GET "/" for 127.0.0.1 at 2019-01-03 22:27:08 +1100
+Processing by ReviewsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (8.3ms)
+Completed 500 Internal Server Error in 19ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `photo' for nil:NilClass):
+    34:     <%= link_to review_path(review) do %>
+    35:       <!-- grabbing the following inside each loop -->
+    36:       <!-- image photo uploaded -->
+    37:       <%= image_tag @post.photo.url %>
+    38:       <h2><%= review.title %></h2>
+    39:       <p>
+    40:         <!-- ruby helper pluralize -->
+  
+app/views/reviews/index.html.erb:37:in `block (2 levels) in _app_views_reviews_index_html_erb__2901678254986033114_70324372193200'
+app/views/reviews/index.html.erb:34:in `block in _app_views_reviews_index_html_erb__2901678254986033114_70324372193200'
+app/views/reviews/index.html.erb:31:in `_app_views_reviews_index_html_erb__2901678254986033114_70324372193200'
+Started GET "/" for 127.0.0.1 at 2019-01-03 22:27:29 +1100
+Processing by ReviewsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  Rendered reviews/index.html.erb within layouts/application (6.8ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `photo' for nil:NilClass):
+    34:     <%= link_to review_path(review) do %>
+    35:       <!-- grabbing the following inside each loop -->
+    36:       <!-- image photo uploaded -->
+    37:       <%= image_tag @post.photo.thumb %>
+    38:       <h2><%= review.title %></h2>
+    39:       <p>
+    40:         <!-- ruby helper pluralize -->
+  
+app/views/reviews/index.html.erb:37:in `block (2 levels) in _app_views_reviews_index_html_erb__2901678254986033114_70324393788260'
+app/views/reviews/index.html.erb:34:in `block in _app_views_reviews_index_html_erb__2901678254986033114_70324393788260'
+app/views/reviews/index.html.erb:31:in `_app_views_reviews_index_html_erb__2901678254986033114_70324393788260'
+Started GET "/" for 127.0.0.1 at 2019-01-03 22:28:20 +1100
+Processing by ReviewsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 6]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 7]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 8]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 9]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 10]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 11]]
+  Rendered reviews/index.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 57ms (Views: 48.7ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 22:38:36 +1100
+Processing by ReviewsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 6]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 7]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 8]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 9]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 10]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 11]]
+  Rendered reviews/index.html.erb within layouts/application (35.6ms)
+Completed 200 OK in 104ms (Views: 75.6ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/images/fallback/thumb_default.png" for 127.0.0.1 at 2019-01-03 22:38:36 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/images/fallback/thumb_default.png"):
+  
+actionpack (5.1.6.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.1) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2019-01-03 22:43:18 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mBookmark Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "bookmarks" WHERE "bookmarks"."review_id" = ? AND "bookmarks"."user_id" = 1 LIMIT ?[0m  [["review_id", 6], ["LIMIT", 1]]
+  [1m[36mBookmark Load (1.1ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."review_id" = ?[0m  [["review_id", 6]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 6]]
+  Rendered reviews/show.html.erb within layouts/application (172.6ms)
+Completed 200 OK in 286ms (Views: 230.6ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/reviews/6-cheap-and-fast" for 127.0.0.1 at 2019-01-03 22:43:18 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"6-cheap-and-fast"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mBookmark Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "bookmarks" WHERE "bookmarks"."review_id" = ? AND "bookmarks"."user_id" = 1 LIMIT ?[0m  [["review_id", 6], ["LIMIT", 1]]
+  [1m[36mBookmark Load (0.2ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."review_id" = ?[0m  [["review_id", 6]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 6]]
+  Rendered reviews/show.html.erb within layouts/application (17.4ms)
+Started GET "/images/fallback/thumb_default.png" for 127.0.0.1 at 2019-01-03 22:43:18 +1100
+  
+ActionController::RoutingError (No route matches [GET] "/images/fallback/thumb_default.png"):
+  
+actionpack (5.1.6.1) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6.1) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6.1) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6.1) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6.1) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6.1) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6.1) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6.1) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Completed 200 OK in 89ms (Views: 79.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-03 22:43:22 +1100
+Processing by ReviewsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 6]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 7]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 8]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 9]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 10]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 11]]
+  Rendered reviews/index.html.erb within layouts/application (28.9ms)
+Completed 200 OK in 78ms (Views: 69.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-04 23:54:32 +1100
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReviewsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 6]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 7]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 8]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 9]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 10]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 11]]
+  Rendered reviews/index.html.erb within layouts/application (275.2ms)
+Completed 200 OK in 419ms (Views: 336.8ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/reviews/11-fuz-s-image-with-review" for 127.0.0.1 at 2019-01-04 23:55:26 +1100
+Processing by ReviewsController#show as HTML
+  Parameters: {"id"=>"11-fuz-s-image-with-review"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  Rendering reviews/show.html.erb within layouts/application
+  [1m[36mBookmark Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "bookmarks" WHERE "bookmarks"."review_id" = ? AND "bookmarks"."user_id" = 1 LIMIT ?[0m  [["review_id", 11], ["LIMIT", 1]]
+  [1m[36mBookmark Load (0.4ms)[0m  [1m[34mSELECT "bookmarks".* FROM "bookmarks" WHERE "bookmarks"."review_id" = ?[0m  [["review_id", 11]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."review_id" = ? ORDER BY created_at desc[0m  [["review_id", 11]]
+  Rendered reviews/show.html.erb within layouts/application (122.3ms)
+Completed 200 OK in 174ms (Views: 163.1ms | ActiveRecord: 3.1ms)
+
+
+Started DELETE "/reviews/11-fuz-s-image-with-review" for 127.0.0.1 at 2019-01-04 23:55:32 +1100
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"BFA5awOcANKwqBenmgWpUWKqXUSqKz35esEpUlF1ycXQcJhUDomUhi0bYR08YIP6sgKMsiSYJjk+qy/MjPTyag==", "id"=>"11-fuz-s-image-with-review"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "reviews" WHERE "reviews"."id" = ?[0m  [["id", 11]]
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+Completed 500 Internal Server Error in 3884ms (ActiveRecord: 3.0ms)
+
+
+  
+Excon::Error::NotFound (Expected(204) <=> Actual(404 Not Found)
+excon.error.response
+  :body          => "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Error><Code>NoSuchBucket</Code><Message>The specified bucket does not exist</Message><BucketName>bein-reviews</BucketName><RequestId>32F546ABC6071960</RequestId><HostId>qSV1OaeLAcWSEwJq7MmRBEM4nwhQDdFCZX67ZQcVlJhLlNzEHOqvM5uk/E4sRly1lRZcGjS8Ep8=</HostId></Error>"
+  :cookies       => [
+  ]
+  :headers       => {
+    "Content-Type"     => "application/xml"
+    "Date"             => "Fri, 04 Jan 2019 12:55:35 GMT"
+    "Server"           => "AmazonS3"
+    "x-amz-id-2"       => "qSV1OaeLAcWSEwJq7MmRBEM4nwhQDdFCZX67ZQcVlJhLlNzEHOqvM5uk/E4sRly1lRZcGjS8Ep8="
+    "x-amz-request-id" => "32F546ABC6071960"
+  }
+  :host          => "bein-reviews.s3.amazonaws.com"
+  :local_address => "192.168.1.6"
+  :local_port    => 64816
+  :path          => "/uploads/review/photo/11/82qFADGz.jpeg"
+  :port          => 443
+  :reason_phrase => "Not Found"
+  :remote_ip     => "52.217.1.108"
+  :status        => 404
+  :status_line   => "HTTP/1.1 404 Not Found\r\n"
+):
+  
+app/controllers/reviews_controller.rb:79:in `destroy'
+Started DELETE "/reviews/11-fuz-s-image-with-review" for 127.0.0.1 at 2019-01-04 23:55:59 +1100
+Processing by ReviewsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"BFA5awOcANKwqBenmgWpUWKqXUSqKz35esEpUlF1ycXQcJhUDomUhi0bYR08YIP6sgKMsiSYJjk+qy/MjPTyag==", "id"=>"11-fuz-s-image-with-review"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mReview Load (0.1ms)[0m  [1m[34mSELECT  "reviews".* FROM "reviews" WHERE "reviews"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Review with 'id'=11-fuz-s-image-with-review):
+  
+app/controllers/reviews_controller.rb:75:in `destroy'
+Started GET "/reviews/" for 127.0.0.1 at 2019-01-04 23:56:16 +1100
+Processing by ReviewsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 6]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 7]]
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 8]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 9]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 10]]
+  Rendered reviews/index.html.erb within layouts/application (15.4ms)
+Completed 200 OK in 76ms (Views: 70.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/reviews/new" for 127.0.0.1 at 2019-01-04 23:56:26 +1100
+Processing by ReviewsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (32.9ms)
+  Rendered reviews/new.html.erb within layouts/application (38.1ms)
+Completed 200 OK in 82ms (Views: 76.4ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2019-01-04 23:58:28 +1100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"of053eSfmoCVIhrLhn7lPnet+Q4QxJAEU1f785Hiw62FBfbrKAGgxJNaAcuSYPVIlBfcYeIW0bPWkmn2vMJJJQ==", "review"=>{"title"=>"Fuz review with image", "restaurant"=>"Shalom", "address"=>"3/4 /299 Sussex St, Sydney NSW 2000", "photo"=>#<ActionDispatch::Http::UploadedFile:0x007f894979c7d0 @tempfile=#<Tempfile:/var/folders/01/6cljrxn56pl0tt6lxg4m72r00000gp/T/RackMultipart20190104-20323-amrert.jpeg>, @original_filename="82qFADGz.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"review[photo]\"; filename=\"82qFADGz.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "body"=>"Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.", "cuisine"=>"Indian", "ambiance"=>"Family", "score"=>"", "price"=>"Cheap"}, "commit"=>"Create Review"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (15.9ms)
+  Rendered reviews/new.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 2795ms (Views: 62.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2019-01-04 23:58:46 +1100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XOL5V4eVzl5C+bPFd/hsyAjvhz5fCunxHib0TPS71W6IwlhoioBaCt9KxX/RnUZj2EdWyNG58jFaTPLSKTruwQ==", "review"=>{"title"=>"Fuz review with image", "restaurant"=>"Shalom", "address"=>"3/4 /299 Sussex St, Sydney NSW 2000", "photo"=>#<ActionDispatch::Http::UploadedFile:0x007f8947f156f8 @tempfile=#<Tempfile:/var/folders/01/6cljrxn56pl0tt6lxg4m72r00000gp/T/RackMultipart20190104-20323-1240fhd.jpeg>, @original_filename="82qFADGz.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"review[photo]\"; filename=\"82qFADGz.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "body"=>"Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis.", "cuisine"=>"Indian", "ambiance"=>"Family", "score"=>"7", "price"=>"Cheap"}, "commit"=>"Create Review"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "body", "score", "restaurant", "price", "cuisine", "created_at", "updated_at", "ambiance", "address", "user_id", "photo") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Fuz review with image"], ["body", "Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis."], ["score", 7], ["restaurant", "Shalom"], ["price", "Cheap"], ["cuisine", "Indian"], ["created_at", "2019-01-04 12:58:48.302788"], ["updated_at", "2019-01-04 12:58:48.302788"], ["ambiance", "Family"], ["address", "3/4 /299 Sussex St, Sydney NSW 2000"], ["user_id", 1], ["photo", "82qFADGz.jpeg"]]
+  [1m[35m (0.5ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 11501ms (ActiveRecord: 4.0ms)
+
+
+  
+Excon::Error::NotFound (Expected(200) <=> Actual(404 Not Found)
+excon.error.response
+  :body          => "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Error><Code>NoSuchBucket</Code><Message>The specified bucket does not exist</Message><BucketName>bein-reviews</BucketName><RequestId>E2E801A44A406B9E</RequestId><HostId>IE18p4FAWVKa0JN8+9Ud2jT8KMAFd/leQXJvwmKW9VPZC7IXKAcIXc85J/mvvOfsHFdRLCSI9cI=</HostId></Error>"
+  :cookies       => [
+  ]
+  :headers       => {
+    "Connection"       => "close"
+    "Content-Type"     => "application/xml"
+    "Date"             => "Fri, 04 Jan 2019 12:58:55 GMT"
+    "Server"           => "AmazonS3"
+    "x-amz-id-2"       => "IE18p4FAWVKa0JN8+9Ud2jT8KMAFd/leQXJvwmKW9VPZC7IXKAcIXc85J/mvvOfsHFdRLCSI9cI="
+    "x-amz-request-id" => "E2E801A44A406B9E"
+  }
+  :host          => "bein-reviews.s3.amazonaws.com"
+  :local_address => "192.168.1.6"
+  :local_port    => 64913
+  :path          => "/uploads/review/photo/11/82qFADGz.jpeg"
+  :port          => 443
+  :reason_phrase => "Not Found"
+  :remote_ip     => "52.216.136.139"
+  :status        => 404
+  :status_line   => "HTTP/1.1 404 Not Found\r\n"
+):
+  
+app/controllers/reviews_controller.rb:57:in `create'
+Started GET "/" for 127.0.0.1 at 2019-01-05 00:09:04 +1100
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ReviewsController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/index.html.erb within layouts/application
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 6]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 7]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 8]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 9]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."review_id" = ?[0m  [["review_id", 10]]
+  Rendered reviews/index.html.erb within layouts/application (268.9ms)
+Completed 200 OK in 402ms (Views: 320.5ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/reviews/new" for 127.0.0.1 at 2019-01-05 00:09:09 +1100
+Processing by ReviewsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering reviews/new.html.erb within layouts/application
+  Rendered reviews/_form.html.erb (84.7ms)
+  Rendered reviews/new.html.erb within layouts/application (90.8ms)
+Completed 200 OK in 154ms (Views: 145.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/reviews" for 127.0.0.1 at 2019-01-05 00:10:42 +1100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SDUDpUrWgx04w7Xk6auDr/Kv+JJ0zhTCduqDsAvIFv9szcyThki5WT67ruT9tZPZERXd/YYcVXXzLxG1Juicdw==", "review"=>{"title"=>"Test AWS Review", "restaurant"=>"Shalom", "address"=>"3/4 /299 Sussex St, Sydney NSW 2000", "photo"=>#<ActionDispatch::Http::UploadedFile:0x007fa1381427e8 @tempfile=#<Tempfile:/var/folders/01/6cljrxn56pl0tt6lxg4m72r00000gp/T/RackMultipart20190105-20445-1712krp.jpeg>, @original_filename="82qFADGz.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"review[photo]\"; filename=\"82qFADGz.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "body"=>"At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.", "cuisine"=>"Indian", "ambiance"=>"Family", "score"=>"7", "price"=>"Cheap"}, "commit"=>"Create Review"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "body", "score", "restaurant", "price", "cuisine", "created_at", "updated_at", "ambiance", "address", "user_id", "photo") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Test AWS Review"], ["body", "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."], ["score", 7], ["restaurant", "Shalom"], ["price", "Cheap"], ["cuisine", "Indian"], ["created_at", "2019-01-04 13:10:44.989742"], ["updated_at", "2019-01-04 13:10:44.989742"], ["ambiance", "Family"], ["address", "3/4 /299 Sussex St, Sydney NSW 2000"], ["user_id", 1], ["photo", "82qFADGz.jpeg"]]
+  [1m[35m (0.4ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 5972ms (ActiveRecord: 1.3ms)
+
+
+  
+Excon::Error::BadRequest (Expected(200) <=> Actual(400 Bad Request)
+excon.error.response
+  :body          => "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Error><Code>AuthorizationHeaderMalformed</Code><Message>The authorization header is malformed; the region 'us-east-1' is wrong; expecting 'ap-southeast-2'</Message><Region>ap-southeast-2</Region><RequestId>C0E4E9FAD2BAA658</RequestId><HostId>xPykuChE5wWmuLMw891jmBQYUyHglBIh2qKS4Y+wgnSEdN12Qm9OSeDUnIT6cXF7aYrQyrx3FyY=</HostId></Error>"
+  :cookies       => [
+  ]
+  :headers       => {
+    "Connection"       => "close"
+    "Content-Type"     => "application/xml"
+    "Date"             => "Fri, 04 Jan 2019 13:10:46 GMT"
+    "Server"           => "AmazonS3"
+    "x-amz-id-2"       => "xPykuChE5wWmuLMw891jmBQYUyHglBIh2qKS4Y+wgnSEdN12Qm9OSeDUnIT6cXF7aYrQyrx3FyY="
+    "x-amz-request-id" => "C0E4E9FAD2BAA658"
+  }
+  :host          => "superhibein.s3.amazonaws.com"
+  :local_address => "192.168.1.6"
+  :local_port    => 65093
+  :path          => "/uploads/review/photo/11/82qFADGz.jpeg"
+  :port          => 443
+  :reason_phrase => "Bad Request"
+  :remote_ip     => "52.95.133.32"
+  :status        => 400
+  :status_line   => "HTTP/1.1 400 Bad Request\r\n"
+):
+  
+app/controllers/reviews_controller.rb:57:in `create'
+Started POST "/reviews" for 127.0.0.1 at 2019-01-05 00:15:10 +1100
+Processing by ReviewsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SDUDpUrWgx04w7Xk6auDr/Kv+JJ0zhTCduqDsAvIFv9szcyThki5WT67ruT9tZPZERXd/YYcVXXzLxG1Juicdw==", "review"=>{"title"=>"Test AWS Review", "restaurant"=>"Shalom", "address"=>"3/4 /299 Sussex St, Sydney NSW 2000", "photo"=>#<ActionDispatch::Http::UploadedFile:0x007fa138020ef0 @tempfile=#<Tempfile:/var/folders/01/6cljrxn56pl0tt6lxg4m72r00000gp/T/RackMultipart20190105-20445-p7xcf4.jpeg>, @original_filename="82qFADGz.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"review[photo]\"; filename=\"82qFADGz.jpeg\"\r\nContent-Type: image/jpeg\r\n">, "body"=>"At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.", "cuisine"=>"Indian", "ambiance"=>"Family", "score"=>"7", "price"=>"Cheap"}, "commit"=>"Create Review"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "reviews" ("title", "body", "score", "restaurant", "price", "cuisine", "created_at", "updated_at", "ambiance", "address", "user_id", "photo") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Test AWS Review"], ["body", "At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet."], ["score", 7], ["restaurant", "Shalom"], ["price", "Cheap"], ["cuisine", "Indian"], ["created_at", "2019-01-04 13:15:13.267742"], ["updated_at", "2019-01-04 13:15:13.267742"], ["ambiance", "Family"], ["address", "3/4 /299 Sussex St, Sydney NSW 2000"], ["user_id", 1], ["photo", "82qFADGz.jpeg"]]
+  [1m[35m (0.3ms)[0m  [1m[31mrollback transaction[0m
+Completed 500 Internal Server Error in 6420ms (ActiveRecord: 1.1ms)
+
+
+  
+Excon::Error::BadRequest (Expected(200) <=> Actual(400 Bad Request)
+excon.error.response
+  :body          => "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Error><Code>AuthorizationHeaderMalformed</Code><Message>The authorization header is malformed; the region 'us-east-1' is wrong; expecting 'ap-southeast-2'</Message><Region>ap-southeast-2</Region><RequestId>D3629E9FA661912D</RequestId><HostId>DJ5OGB0hXvKnlz5oTkqc4g/G6IvmNa5DI+H0Uq0PhhepOfQ1fqJocMjXoE/n16EIcpaHerTcG2w=</HostId></Error>"
+  :cookies       => [
+  ]
+  :headers       => {
+    "Connection"       => "close"
+    "Content-Type"     => "application/xml"
+    "Date"             => "Fri, 04 Jan 2019 13:15:16 GMT"
+    "Server"           => "AmazonS3"
+    "x-amz-id-2"       => "DJ5OGB0hXvKnlz5oTkqc4g/G6IvmNa5DI+H0Uq0PhhepOfQ1fqJocMjXoE/n16EIcpaHerTcG2w="
+    "x-amz-request-id" => "D3629E9FA661912D"
+  }
+  :host          => "superhibein.s3.amazonaws.com"
+  :local_address => "192.168.1.6"
+  :local_port    => 65157
+  :path          => "/uploads/review/photo/11/82qFADGz.jpeg"
+  :port          => 443
+  :reason_phrase => "Bad Request"
+  :remote_ip     => "52.95.131.55"
+  :status        => 400
+  :status_line   => "HTTP/1.1 400 Bad Request\r\n"
+):
+  
+app/controllers/reviews_controller.rb:57:in `create'

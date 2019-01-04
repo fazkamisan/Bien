@@ -11,6 +11,9 @@ class Review < ApplicationRecord
   geocoded_by :address
   after_validation :geocode
 
+  #add the photo uploader
+  mount_uploader :photo, PhotoUploader
+
 
   #adding some validations
   validates :title, presence: true

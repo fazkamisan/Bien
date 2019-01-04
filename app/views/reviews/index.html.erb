@@ -33,6 +33,8 @@
     <!-- linking to corresponding reviews -->
     <%= link_to review_path(review) do %>
       <!-- grabbing the following inside each loop -->
+      <!-- image photo uploaded -->
+      <%= image_tag review.photo.thumb %>
       <h2><%= review.title %></h2>
       <p>
         <!-- ruby helper pluralize -->

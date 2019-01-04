@@ -91,6 +91,10 @@ class ReviewsController < ApplicationController
     if @review. user != @current_user
       # take it back to homepage
       redirect_to root_path
+      #adding else if statement to check if post less than one hour
+    elsif @review.created_at < 1.hour.ago
+      # take them to review page
+      redirect_to review_path(@review)
     end
   end
 
@@ -117,7 +121,7 @@ class ReviewsController < ApplicationController
 
   # creating a new function that will hold templated function
   def form_params
-    params.require(:review).permit(:title, :restaurant, :body, :score, :ambiance, :cuisine, :price, :address)
+    params.require(:review).permit(:title, :restaurant, :body, :score, :ambiance, :cuisine, :price, :address, :photo)
   end
 
 end

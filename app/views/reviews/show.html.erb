@@ -1,5 +1,8 @@
 <!-- Define it here, so this will print out on the application.html.erb -->
 <% content_for :page_title, @review.title %>
+<!-- image photo uploaded -->
+<%= image_tag @review.photo.medium %>
+
 <h1>
   <%= @review.title %>
 </h1>
@@ -80,8 +83,11 @@
 <!-- if statement validation if you're the posted reviewer -->
 <% if @review.user == @current_user %>
   <div class="actions">
-    <!--adding button to edit current review -->
-    <%= link_to "Edit this review", edit_review_path(@review) %>
+    <!-- if post less one hour ago - using rails helper -->
+    <% if @review.created_at > 1.hour.ago %>
+      <!--adding button to edit current review -->
+      <%= link_to "Edit this review", edit_review_path(@review) %>
+    <% end %>
     <!-- adding the button that will delete with confirmation  -->
     <%= link_to "Delete this review", review_path(@review), method: :delete, data: {confirm: "Are you sure?"}  %>
   </div>

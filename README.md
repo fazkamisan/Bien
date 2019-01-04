@@ -1413,3 +1413,257 @@ How to add filter params
         <% end %>
       </ul>
     ```
+
+--------------------------------------------------------------------------------
+
+# Updating Heroku
+
+ - once you want to sync latest work, you first need to push our latest work to remote git repo, before we can update heroku.
+
+ -  Once this is updated in the remote git, we can update it on heroku. we can check current URL by:
+    ```
+      heroku open
+    ```
+
+  - To send all of the code to heroku:
+    ```
+      git push heroku master
+    ```
+  - it will start compling and push it to heroku.
+
+  - once this is done, we must remember to update our database
+    ```
+      heroku run rails db:migrate
+    ```
+
+--------------------------------------------------------------------------------
+
+# Editing within an hour only
+
+  - To limit "one hour" posting, we can use in our project
+    ```
+      t.datetime "created_at"
+      t.datetime "updated_at"
+    ```
+  - Using if statement we can set the following rules 'app/views/reviews/show.html.erb'
+    ```
+      <!-- if post less one hour ago - using rails helper -->
+      <% if @review.created_at > 1.hour.ago %>
+        <!--adding button to edit current review -->
+        <%= link_to "Edit this review", edit_review_path(@review) %>
+      <% end %>
+    ```
+  - The next thing that we need to do is remove the edit url after 1 hour in our controller 'app/controllers/reviews_controller.rb'. the 'edit' part in the controller
+    ```
+      #adding new function to edit review
+      def edit
+        #find the individual review to edit
+        @review = Review.find(params[:id])
+        # make sure non posted user can edit without the url (!= is not)
+        if @review. user != @current_user      
+          # take it back to homepage
+          redirect_to root_path
+          #adding else if statement to check if post less than one hour
+        elsif @review.created_at < 1.hour.ago
+          # take them to review page
+          redirect_to review_path(@review)
+        end
+      end
+    ```
+--------------------------------------------------------------------------------
+
+# File uploading with Carrierwave
+
+  - we will be using Carrierwave gem to help us with image uploading. It is easier to set up. inside 'Gemfile'
+    ```
+      #adding Carrierwave for image uploading
+      gem 'carrierwave', '~> 1.0'
+    ```
+  -  be sure to do ``` bundle install ```
+
+  - Once installed, the next thing we want to do is run ``` rails generate uploader Photo```.
+      ```
+        rails generate uploader [name of product]
+      ```
+  - it will then generate 'app/uploaders/photo_uploader.rb'. This will now allow us to add photo to our site.
+
+  - The next thing we want to do is add a string coloumn to our model, we can do the following
+    ```
+      rails generate migration add_photos_to_reviews
+    ```
+    This similar like below: rails generate migration [name of the migration]
+
+  - Now we need to add string to our model inside the new migration file
+    ```
+      def change
+        add_column :reviews, :photo, :string
+      end
+    ```
+  - So it will like as follow:
+    add_column :[name of table], :[name of field], :[type of field]
+
+  - We can then sync the database up: ``` rails db:migrate ```
+
+  - once this is done, we now need to mount the uploader to 'app/models/review.rb'
+    ```
+      mount_uploader :photo, PhotoUploader
+    ```
+  - notes: mount_uploader [what is the field to add it to], [class control- see "app/uploaders/photo_uploader.rb" class on the first line]
+
+  - The next thing is to add the new field and allow in the paramater fields 'app/views/reviews/_form.html.erb'
+    ```
+      ...
+        <%= f.input :photo %>
+      ...
+    ```
+  - simple form should now change the input as photo upload.
+
+  - We now want to allow it to add in our controller 'app/controllers/reviews_controller.rb'. Right down towards the bottom of the page is the thing that we allow which is: 'def form_params...'
+    ```
+      def form_params
+        params.require(:review).permit(:title, :restaurant, :body, :score, :ambiance, :cuisine, :price, :address, :photo)
+      end
+    ```
+
+  - to show uploaded photos, we need to now update 'app/views/reviews/show.html.erb'
+    ```
+      <!-- image photo uploaded -->
+      <%= image_tag @review.photo %>
+    ```
+
+--------------------------------------------------------------------------------
+
+# Image Resizing
+
+ - We're using  Imagemagick as part of the carrierwave. Mac OS doesnt come with it installed, so we need to add it as so:
+  ```
+    brew install imagemagick
+  ```
+  - once installed, we need to add the following things in photo_uploader 'app/uploaders/photo_uploader.rb'. Uncomment the following
+    ```
+      include CarrierWave::MiniMagick
+    ```
+  - we want to make all image resize to fit like so:
+    ```
+      #making images resize to fit [width, height]
+      process resize_to_fit: [1200, 800]
+    ```
+  - adding a version of image
+    ```
+      #adding a medium version
+      version :medium do
+        process resize_to_fill: [600,400]
+      end
+
+      #creating a thumbnail verion of image
+      version :thumb do
+        process resize_to_fill: [150,150]
+      end
+    ```
+
+  - we then need to make sure we install MiniMagick gem since we're declaring it earlier 'Gemfile':
+    ```
+      gem 'mini_magick'
+    ```
+
+  - run the ```bundle install ```
+
+  - once bundle installed, we then can choose a medium version of the image upload so display on 'app/views/reviews/show.html.erb':
+    ```
+      <!-- image photo uploaded -->
+      <%= image_tag @review.photo.medium %>
+    ```
+  - can now start showing the images on the listing page 'app/views/reviews/index.html.erb'
+    ```
+      <!-- ruby for loop. within this area, repeat each @reviews items -->
+      <% @reviews.each do |review| %>
+        <div class="review">
+          <!-- linking to corresponding reviews -->
+          <%= link_to review_path(review) do %>
+            <!-- grabbing the following inside each loop -->
+            <!-- image photo uploaded -->
+            <%= image_tag review.photo.thumb %>
+            <h2><%= review.title %></h2>
+            <p>
+              <!-- ruby helper pluralize -->
+              <%= review.cuisine %> - <%= pluralize review.comments.count, "comment" %>
+            </p>
+          <% end %>
+        </div>
+      <% end%>
+    ```
+
+--------------------------------------------------------------------------------
+
+# Image Resizing
+
+  - To provide better UX, we create placeholder image via carrierwave. Inside 'app/uploaders/photo_uploader.rb' scroll down and uncomment the following.
+    ```
+      # Provide a default URL as a default if there hasn't been a file uploaded:
+      def default_url(*args)
+      # For Rails 3.1+ asset pipeline compatibility:
+      ActionController::Base.helpers.asset_path("fallback/" + [version_name, "default.png"].compact.join('_'))
+
+      # "/images/fallback/" + [version_name, "default.png"].compact.join('_')
+       end
+    ```
+  - add any fallback images inside this path 'app/assets/images/fallback'
+
+
+--------------------------------------------------------------------------------
+
+# Hosting images on Amazon Web Services
+
+  - For production, we need to store images different from our heroku. We will use Amazon S3 with carrierwave.
+
+  - we need to set up amazon details. Sign up to a new aws S3 service (faz_drkamisan@hotmail.com).
+
+  - Security, Identity, & Compliance > IAM.
+
+  - Set up a new user 'superhibein' and select Programmatic access.
+
+  - Create a new group named 'superhibein' with AmazonS3FullAccess
+
+  - Click next to review and it will provide access key ID and secret access key
+
+  - navigate to the permission tab inside this project and set the following:
+    ```
+      Manage public access control lists (ACLs)
+
+      Block new public ACLs and uploading public objects (Recommended)
+      False
+      Remove public access granted through public ACLs (Recommended)
+      False
+      Manage public bucket policies
+
+      Block new public bucket policies (Recommended)
+      True
+      Block public and cross-account access if bucket has public policies (Recommended)
+      False
+    ```
+  - The next thing install the gem so we can install complete the set up
+      ```
+        gem 'fog-aws'
+      ```
+
+  - once installed, we can do the following. Setup an the following file 'config/initializers/carrierwave.rb'
+      ```
+        CarrierWave.configure do |config|
+          config.fog_provider = 'fog/aws'                        # required
+          config.fog_credentials = {
+            provider:              'AWS',                        # required
+            aws_access_key_id:     'xxx',                        # required unless using use_iam_profile
+            aws_secret_access_key: 'yyy',                        # required unless using use_iam_profile
+          }
+          config.fog_directory  = 'name_of_bucket'                                      # required
+        end
+    ```
+    - the last thing we need to do is change the following 'app/uploaders/photo_uploader.rb'
+      ```
+        # Choose what kind of storage to use for this uploader:
+        #storage :file
+        storage :fog
+      ```
+    - restart the server again.
+
+    - any new photo uploads will now go to the S3 bucket
