@@ -5,5 +5,5 @@ CarrierWave.configure do |config|
     aws_access_key_id:     'AKIAIA5FOQZSINMZ22XA',                        # required unless using use_iam_profile
     aws_secret_access_key: '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',    # required unless using use_iam_profile
   }
-  config.fog_directory  = 'superhibein'                                      # required
+  config.fog_directory  = 'superhidefault'                                      # required
 end

@@ -20,8 +20,14 @@
       <nav>
         <!-- if statement to see if user has session -->
         <% if is_logged_in? %>
+
           <!-- user identification via "session" -->
           <%= @current_user.username %>
+
+          <!-- if user is admin, show this link -->
+          <% if @current_user.is_admin? %>
+            <%= link_to "Admin", admin_root_path %>
+          <% end %>
           <!-- rails built-in helpers to link within site -->
           <%= link_to "Add a review", new_review_path %>
           <!-- remove session with method "delet" -->
@@ -41,7 +47,7 @@
     </main>
 
     <footer>
-      Copyright 2018 Bien Riviews
+      Copyright 2018 Bien Riviews - <%= link_to "About", about_path %> - <%= link_to "Terms", terms_path %>
     </footer>
   </body>
 </html>

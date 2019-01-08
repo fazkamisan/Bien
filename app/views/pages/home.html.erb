@@ -1,0 +1,21 @@
+<% if @content.image.present? %>
+  <%= image_tag @content.image %>
+<% end %>
+
+<h1><%= @content.title %></h1>
+
+
+<%= simple_format @content.body %>
+
+<!-- pulling review higher than 8 -->
+<h2>Highly rated reviews</h2>
+
+<!-- Doing for each loop using partial -->
+<%= render partial: "review", collection: @highly_rated_reviews %>
+
+
+<!-- admin currated -->
+<h2>Bein featured reviews</h2>
+
+<!-- Doing for each loop using partial -->
+<%= render partial: "review", collection: @featured_reviews %>

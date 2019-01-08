@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   #resources is a rails convention - generated a controller called reviews
   resources :reviews do
     # tie comments as part of reviews
@@ -15,7 +16,15 @@ Rails.application.routes.draw do
   resource :session
 
   #this is where the homepage goes (app/controllers/reviews_controller.rb)
-  root "reviews#index"
+  #root "reviews#index"
+
+  #new homepage set by pages from active admin
+  root "pages#home"
+
+  #pulling the page from active admin
+  get "about", to: "pages#about"
+  get "terms", to: "pages#terms"
+
 
 
 

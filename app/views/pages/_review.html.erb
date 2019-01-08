@@ -1,0 +1,8 @@
+<p>
+  <%= link_to review.title, review_path(review) %> (<%= review.score %>/10, rated by
+  <% if review.user.present? %>
+    <%= review.user.username %>
+  <% else %>
+    Anonymous
+  <% end %>)
+</p>

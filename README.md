@@ -1667,3 +1667,475 @@ How to add filter params
     - restart the server again.
 
     - any new photo uploads will now go to the S3 bucket
+
+    - NOTE: using this gem we need to keep it on the default region (virginia) https://github.com/fog/fog/issues/3275
+
+
+--------------------------------------------------------------------------------
+
+# Adding an admin flag to our users
+
+  - The best way to do this is to create a new role for user. So what we need to do is add extra info in our database.
+
+  - We'll add the following:
+    ```
+      admin: true or false
+    ```
+  - We'll do a new migration as follow:
+    ```
+      rails generate migration add_admins_to_users
+    ```
+    This similar like below: rails generate migration [name of the migration]
+
+  - Now we need to add string to our model inside the new migration file
+    ```
+      def change
+        add_column :reviews, :photo, :string
+      end
+    ```
+  - So it will like as follow:
+    add_column :[name of table], :[name of field], :[type of field] default: [true or false]
+
+  - We can then sync the database up: ``` rails db:migrate ```
+
+  - the next thing we need to do is to then assign someone as admin. We can do this manually by running the following command:
+    ```
+      rails console
+    ```
+  - To check all users, inside the console command:
+    ```
+      User.all
+    ```
+
+  - it will then print out a list of all users in the console, find the target use you'd wish to be an admin as follow:
+    ```
+      @user = User.find_by(username: "[name of user]")
+    ```
+
+  - It will then print out the searched user. We can now update as follow:
+    ```
+      @user.is_admin = true
+    ```
+
+  - You can then confirm the changes by typing it the command:
+    ```
+      @user
+    ```
+
+  - We must now save this changes by running the command:
+    ```
+      @user.save
+    ```
+
+  - It should print out statement as "true" which confirms that it is saved.
+
+  - We can exit this command by typing:
+    ```
+      exit
+    ```
+
+  - We now need to seed the db. Seed is a way to make sure that data on both production and local have the same values. We can set a new admin user inside 'db/seeds.rb'
+    ```
+      User.new(email:"hello@test.com", username: "admin", is_admin: true, password: "Hello@121", password_confirmation: "Hello@121" ).save
+    ```
+  - once save, we run the file in the command prompt:
+    ```
+      rails db:seed
+    ```
+  - To check whether this new user have been added, we can run the command prompt:
+    ```
+      rails console
+      User.all
+    ```
+
+--------------------------------------------------------------------------------
+
+# Adding admin features site-wide
+
+  -  We can add special area specially for admin users. We need to do this throughout the whole of our controller. To do this we can add it inside 'app/controllers/application_controller.rb'
+    ```
+      # Check admin login status function
+      def check_admin
+        # using the function above by grabbing the id
+        @current_user = find_current_user
+        # cross checking to see if user is also an admin
+        unless @current_user.present? and @current_user.is_admin?
+          #they're find so no additional code needed
+          #if they're not admin
+          redirect_to root_path
+        end
+      end
+    ```
+  - we will use this function later for our admin panel
+
+--------------------------------------------------------------------------------
+
+# Introducing Active Admin
+
+  - We'll be using activeadmin for this project. This is ruby gem for adding admin panel.
+
+  - We can follow the instruction on this link: https://activeadmin.info/0-installation.html#setting-up-active-admin
+
+  - Since we already have a user system set up. We can do the following. inside 'Gemfile':
+    ```
+      # add admin panel via active admin
+      gem 'activeadmin'
+      # Plus integrations with:
+      gem 'devise'
+      gem 'cancan' # or cancancan
+      gem 'draper'
+      gem 'pundit'
+    ```
+  - run ```bundle install ```
+
+  - The next thing we'll need to do is set up active admin (rails generate). we can skip devise since we have a user authentication system
+    ```
+      rails g active_admin:install --skip-users
+    ```
+  - it will then install a bunch of files. we will need to go through them one by one. taken from command prompt:
+    ```
+      create  config/initializers/active_admin.rb
+      create  app/admin
+      create  app/admin/dashboard.rb
+       route  ActiveAdmin.routes(self)
+    generate  active_admin:assets
+  Running via Spring preloader in process 21481
+      create  app/assets/javascripts/active_admin.js.coffee
+      create  app/assets/stylesheets/active_admin.scss
+      create  db/migrate/20190105015650_create_active_admin_comments.rb
+    ```
+
+    - The first thing is migrate the generated files.
+      ```
+        rails db:migrate
+      ```
+    - once its installed, we can run the rails server and go to the admin panel. http://localhost:3000/admin
+
+    - We now need to add our new model.
+      ```
+        rails generate active_admin:resource Review
+      ```
+      rails generate active_admin:resource [name of the model we want to use]
+
+    - NOTE: if we restart the server again and see any error. we should be able to resolve this by making sure the fallback default image is added in 'app/assets/images/fallback'
+
+
+--------------------------------------------------------------------------------
+
+# Active Admin resources
+
+  - In order for use to be able to edit and save in active admin, we need to fix  the forbidden attributes error. This is in 'app/admin'
+
+  - We need to specify which params we want to permit. To fix the review forbidden attributes, we can copy the permits params inside 'app/controllers/reviews_controller.rb'
+
+  - Inside 'app/admin/reviews.rb' we need to update the following:
+    ```
+      permit_params :title, :restaurant, :body, :score, :ambiance, :cuisine, :price, :address, :photo
+    ```
+
+  - restart the server. and try to edit some review entry. It should work.
+
+  - To change the user in reviews, we need to make sure that we permit this params. Inside 'app/controllers/reviews_controller.rb'
+    ```
+      permit_params :title, :restaurant, :body, :score, :ambiance, :cuisine, :price, :address, :photo, :user_id
+    ```
+
+  - To now have "users" in the admin panel, we need genereate a new resource
+    ```
+      rails generate active_admin:resource User
+    ```
+    rails generate active_admin:resource [name of the model we want to use]
+
+  - when you run the server, you should now see an option below.
+
+  - Once we have this, in order for us to be able to edit users, we need to modify some function inside 'app/admin/users.rb'
+    ```
+      controller do
+        resources_configuration[:self][:finder] = :find_by_username
+      end
+    ```
+
+  - we also need to make sure we add permit params inside 'app/admin/users.rb'. we can copy it from the permit inside 'app/controllers/users_controller.rb'
+    ```
+      permit_params :username, :email, :password, :password_confirmation, :is_admin
+    ```
+
+--------------------------------------------------------------------------------
+
+# Securing Active Admin with our user system
+
+  - we want to be able to secure active admin so that we can prevent normal user from accessing the url.
+
+  - When we installed our active admin, it also installed the initializer. This is where we look at to secure active admin. 'config/initializers/active_admin.rb'
+
+  - We can change settings inside this file. Scroll down the page and see 'User authenication'. As we have done a quick authentication inside 'app/controllers/application_controller.rb'. So we can use this in the same way.
+
+    ```
+      config.authentication_method = :check_admin
+    ```
+
+  - We also want to check current user, to do this we need to update the "check_admin" method slightly 'app/controllers/application_controller.rb'
+    ```
+      # find admin user
+      def find_admin_user
+        #find the current user by using the function above by grabbing the id
+        @current_user = find_current_user
+        #if they're not admin
+        if @current_user.present? and @current_user.is_admin?
+          #return the user - can proceed
+          @current_user
+        else
+          # if they're not
+          nil
+        end
+      end
+    ```
+  - So once this is saved, we can go back to 'config/initializers/active_admin.rb' and add the following:
+    ```
+      config.current_user_method = :find_admin_user
+    ```
+  - we can also add log out link path inside 'config/initializers/active_admin.rb' by using session path:
+    ```
+      # Default:
+      config.logout_link_path = :session_path
+      ...
+        # Default:
+        config.logout_link_method = :delete
+      ...
+    ```
+
+  - you'll see that some css/js are overtaking the styling since we've installed active admin. To overcome this, inside 'app/assets/stylesheets/application.css' on line no.13 change it to:
+    ```
+       *= require global
+    ```
+  - also add the following below it:
+    ```
+      *= require users
+    ```
+  - it should now revert back to normal
+
+  - The last thing we need to do is add a link in our nav so admin so they can navigate 'app/views/layouts/application.html.erb'
+    ```
+      <nav>
+        <!-- if statement to see if user has session -->
+        <% if is_logged_in? %>
+
+          <!-- user identification via "session" -->
+          <%= @current_user.username %>
+
+          <!-- if user is admin, show this link -->
+          <% if @current_user.is_admin? %>
+            <%= link_to "Admin", admin_root_path %>
+          <% end %>
+          <!-- rails built-in helpers to link within site -->
+          <%= link_to "Add a review", new_review_path %>
+          <!-- remove session with method "delet" -->
+          <%= link_to "Log out", session_path, method: :delete  %>
+        <% else %>
+          <!-- if not signed up/login show the links -->
+          <%= link_to "Sign up", new_user_path %>
+          <%= link_to "Log in", new_session_path %>
+        <% end %>
+      </nav>
+    ```  
+
+--------------------------------------------------------------------------------
+
+# Creating content page
+
+  - creating static pages will be similar like rest of pages. we make model, controller (index and show) and we'll add it on active admin to be editable.
+
+  - in the command prompt we can do the following:
+    ```
+      rails generate model Page title:string body:text url:string image:string
+    ```
+  - Remember model will always be singular and capital at the begining. ``` rails generate [name of model] [name of columnn: type of data] ```
+
+  - Double check the migration file. Once happy run ``` rails db:migrate ```
+
+  - we'll then focus on our admin system. We'll create a new resource:
+    ```
+      rails generate active_admin:resource Page
+    ```
+    rails generate active_admin:resource [name of model]
+
+  - The next step is to specify the attributes that we permits 'app/admin/pages.rb'
+    ```
+      permit_params :title, :body, :url, :image
+    ```
+  - once you restart the server. you can now create new page
+
+  - to prevent url from being used twice, we can update the model. 'app/models/page.rb'
+    ```
+      #prevent url from being used twice
+      validates :url, uniqueness: true
+    ```
+
+  - To expose the new created pages to the world, we need to create a controller. in command prompt
+    ```
+      rails generate controller pages
+    ```
+    - remember the name will be plurals with no caps ``` rails generate [name of controller]```
+
+    - The next thing we'll do is update our 'config/routes.rb'
+      ```
+        #pulling the page from active admin
+        get "about", to: "pages#about"
+        get "terms", to: "pages#terms"
+      ```
+      get "[page name]", to: "[path inside views` e.g [views/pages]#[.html.erb e.g about.html.erb]]"
+
+    - What we'll do next is to create a custom url in the controller 'app/controllers/pages_controller.rb'
+      ```
+        # creating a function for this "about.html.erb" to dynamically edit in active admin
+        def about
+          #grabbing the page content via the url
+          @content = Page.find_by(url: "about")
+        end
+
+        def terms
+          #grabbing the page content via the url
+          @content = Page.find_by(url: "terms")
+        end
+
+      ```
+    - we'll then create a view for the about page 'app/views/pages/about.html.erb'. So inside this we can set it dynamic so user can edit it inside active admin
+      ```
+        <h1><%= @content.title %></h1>
+
+        <%= simple_format @content.body %>
+      ```
+
+    - Do the same for terms 'app/views/pages/terms.html.erb'. So inside this we can set it dynamic so user can edit it inside active admin
+      ```
+        <h1><%= @content.title %></h1>
+
+        <%= simple_format @content.body %>
+      ```
+
+    - We can now add the about us in the footer link 'app/views/layouts/application.html.erb'
+
+      ```
+        <footer>
+          Copyright 2018 Bien Riviews - <%= link_to "About", about_path %> -  <%= link_to "Terms", terms_path %>
+        </footer>
+      ```
+
+    - We can also show images for using active admin, first we need to generate new uploader:
+    ``` rails generate uploader ContentForImage```
+
+      remember ```rails generate uploader [name of product]```
+
+    - We now need to do the same set up inside 'app/uploaders/content_for_image_uploader.rb'
+
+      ```
+        include CarrierWave::MiniMagick
+        # storage :file
+        storage :fog
+
+        #making images resize to fit [width, height]
+        process resize_to_fit: [2000, 1200]
+      ```
+
+    - the next thing we're going to do is mount it in our model 'app/models/page.rb':
+      ```
+        #mount image uploader via carrierwave
+        mount_uploader :image, ContentForImageUploader
+      ```
+
+    - restart the server and add it an image inside active admin
+
+    - dont forger to update the views 'app/views/pages/about.html.erb'
+      ```
+        <%= image_tag @content.image %>
+        <h1><%= @content.title %></h1>
+
+        <%= simple_format @content.body %>
+      ```
+
+--------------------------------------------------------------------------------
+
+# Adding a new homepage
+
+  - Creating homepage is now can be done via active admin.
+
+  - Once page is created, we can set in 'config/routes.rb'
+    ```
+      #new homepage set by pages from active admin
+      root "page#home"
+    ```
+  - the next thing, we update the controller 'app/controllers/pages_controller.rb'
+    ```
+      def home
+        #grabbing the page content via the url
+        @content = Page.find_by(url: "home")
+      end
+    ```
+
+  - we then just create the view 'app/views/pages/home.html.erb'
+
+  - the next thing we'll do is set two featured reviews (currated and at least 8 scores or higher)
+
+--------------------------------------------------------------------------------
+
+# How to add featured reviews
+  - Featured reviews going to be admin picked. we're going to add brand new field to each reviews. With this we're going to make a new migration.
+  - so go to command and run the following
+    ```
+      rails generate migration [name of migration] i.e add_featured_to_reviews
+    ```
+  - it will then generate another db file, inside it we add the following code in between 'def change'
+    ```
+     def change
+       add_column :reviews, :is_featured, :boolean, default: false
+     end
+
+  - So it will like as follow:
+       add_column :[name of table], :[name of field], :[type of field] default: [true or false]
+
+  - the next thing, we'll do run ``` rails db:migrate ```
+
+  - once its successful, we'll run the server and inside active admin panel.
+
+  - Once thing that we need to do now is permit the params 'app/admin/reviews.rb'
+    ```
+    permit_params :title, :restaurant, :body, :score, :ambiance, :cuisine, :price, :address, :photo, :user_id, :is_featured
+
+    ```
+  - The next thing we'll do is pull it in our homepage. So inside our 'app/controllers/pages_controller.rb'
+    ```
+    #grabbing high 8 review - pulling from review model
+    @highly_rated_reviews = Review.where("score >= 8")
+
+    # grabbing the currated review
+    @featured_reviews = Review.where(is_featured: true)
+    ```
+
+  - as we're using the .each do loop twice, we can turn it into partial like so. Create a new file 'app/views/pages/_review.html.erb':
+    ```
+      <p>
+        <%= link_to review.title, review_path(review) %> (<%= review.score %>/10, rated by
+        <% if review.user.present? %>
+          <%= review.user.username %>
+        <% else %>
+          Anonymous
+        <% end %>)
+      </p>
+    ```
+
+
+  - We can now loop over this new partial page on main homepage 'app/views/pages/home.html.erb'
+    ```
+      <!-- pulling review higher than 8 -->
+      <h2>Highly rated reviews</h2>
+
+      <!-- Doing for each loop using partial -->
+      <%= render partial: "review", collection: @highly_rated_reviews %>
+
+
+      <!-- admin currated -->
+      <h2>Bein featured reviews</h2>
+
+      <!-- Doing for each loop using partial -->
+      <%= render partial: "review", collection: @featured_reviews %>
+    ```
